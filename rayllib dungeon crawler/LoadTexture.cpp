@@ -16,7 +16,7 @@ void unloadTextures() {
     textures.clear();
 }
 
-void DrawTextureSize(const std::string& name, float x, float y, float width, float height, Color tint) {
+void DrawTexture(const std::string& name, float x, float y, float width, float height, Color tint) {
     if (textures.find(name) != textures.end()) {
         Texture2D tex = textures[name];
         Rectangle source = { 0, 0, (float)tex.width, (float)tex.height };

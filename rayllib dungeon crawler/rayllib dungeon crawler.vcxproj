@@ -131,9 +131,11 @@
   <ItemGroup>
     <ClCompile Include="LoadTexture.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoadTexture.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
