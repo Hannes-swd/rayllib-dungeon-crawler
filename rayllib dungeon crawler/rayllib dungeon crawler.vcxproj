@@ -130,15 +130,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DrawMap.cpp" />
+    <ClCompile Include="Drawplayer.cpp" />
+    <ClCompile Include="globals.cpp" />
     <ClCompile Include="LoadMap.cpp" />
     <ClCompile Include="LoadTexture.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PlayerMovment.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawMap.h" />
+    <ClInclude Include="Drawplayer.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="LoadMap.h" />
     <ClInclude Include="LoadTexture.h" />
+    <ClInclude Include="PlayerMovment.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

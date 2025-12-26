@@ -1,12 +1,15 @@
 ﻿#include "raylib.h"
 #include <unordered_map>
 #include <string>
+#include "globals.h"
 #include "LoadTexture.h"
 #include "Timer.h"
 #include "LoadMap.h"
 #include "DrawMap.h"
+#include "Drawplayer.h"
+#include "PlayerMovment.h"
 
-const int TILE_SIZE = 32;
+
 Map map;
 
 int main(void)
@@ -14,6 +17,7 @@ int main(void)
     //programm infos
     const int screenWidth = 800;
     const int screenHeight = 450;
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(screenWidth, screenHeight, "Dungeon crawler");
     SetTargetFPS(60);
 
@@ -25,24 +29,31 @@ int main(void)
         return -1;
     }
     //CODE METODEN
-    
+
     //texturen laden
     loadTextures();
 
     //Alle timer:
-    
-    
+
+
     while (!WindowShouldClose())
     {
         //timer:
 
-        
 
+        
         //START ZEICHNEN
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
+        //map zeichnen
         DrawMap(map, TILE_SIZE);
+
+        //spieler zeichnen
+        DrawPlayer();
+        //spielerrmoovment
+        CheckMoovment();
+
 
         EndDrawing();
     }

@@ -6,7 +6,7 @@ enum TileType {
     TILE_Boden,
     TILE_WATER,
     TILE_LAVA,
-    TILE_WALL
+    TILE_Wand
 };
 
 struct Map {

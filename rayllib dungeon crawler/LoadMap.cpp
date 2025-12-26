@@ -25,19 +25,22 @@ Map LoadMapFromImage(const char* filename) {
             unsigned int color = (c.r << 16) | (c.g << 8) | c.b;
 
             switch (color) {
-            case 0x0000FF: // Blau → Wasser
+            case 0x0000FF: // Blau  Wasser
                 map.tiles[index] = TILE_WATER;
                 break;
-            case 0x808080: // Grau → Boden
+            case 0x808080: // Grau  Boden
                 map.tiles[index] = TILE_Boden;
                 break;
-            case 0xFF8000: // Orange → Lava
+            case 0xFF8000: // Orange  Lava
                 map.tiles[index] = TILE_LAVA;
                 break;
-            case 0x000000: // Schwarz → Wand
-                map.tiles[index] = TILE_WALL;
+            case 0x000000: // Schwarz  Wand
+                map.tiles[index] = TILE_Wand;
                 break;
-            default:       // Alles andere → leer
+            case 0xFFFFFF: // Weiß Leer
+                map.tiles[index] = TILE_EMPTY;
+                break;
+            default:
                 map.tiles[index] = TILE_EMPTY;
                 break;
             }
