@@ -7,6 +7,10 @@ std::unordered_map<std::string, Texture2D> textures;
 
 void loadTextures() {
     textures["test"] = LoadTexture("resources/test.png");
+    textures["Boden"] = LoadTexture("resources/Boden.png");
+    textures["Wasser"] = LoadTexture("resources/Wasser.png");
+    textures["Lava"] = LoadTexture("resources/Lava.png");
+    textures["Wand"] = LoadTexture("resources/Wand.png");
 }
 
 void unloadTextures() {

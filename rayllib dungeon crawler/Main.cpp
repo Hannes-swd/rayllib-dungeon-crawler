@@ -3,6 +3,12 @@
 #include <string>
 #include "LoadTexture.h"
 #include "Timer.h"
+#include "LoadMap.h"
+#include "DrawMap.h"
+
+const int TILE_SIZE = 32;
+Map map;
+
 int main(void)
 {
     //programm infos
@@ -11,6 +17,13 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "Dungeon crawler");
     SetTargetFPS(60);
 
+    //map laden
+    map = LoadMapFromImage("resources/map.png");
+    if (map.tiles == nullptr) {
+        TraceLog(LOG_ERROR, "Failed to load map!");
+        CloseWindow();
+        return -1;
+    }
     //CODE METODEN
     
     //texturen laden
@@ -29,10 +42,12 @@ int main(void)
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        
+        DrawMap(map, TILE_SIZE);
 
         EndDrawing();
     }
+    //map unloaden
+    UnloadMap(map);
     //texturen unloaden
     unloadTextures();
     CloseWindow();
