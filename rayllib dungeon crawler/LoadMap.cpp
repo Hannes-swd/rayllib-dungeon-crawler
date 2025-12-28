@@ -1,4 +1,5 @@
 ﻿#include "LoadMap.h"
+#include "globals.h"
 #include <cstdlib>
 
 Map LoadMapFromImage(const char* filename) {
@@ -39,6 +40,12 @@ Map LoadMapFromImage(const char* filename) {
                 break;
             case 0xFFFFFF: // Weiß Leer
                 map.tiles[index] = TILE_EMPTY;
+                break;
+                //spawnporint
+            case 0x00FF00:
+                map.tiles[index] = TILE_Boden;
+                PlayerPosition.x = (float)x;
+                PlayerPosition.y = (float)y;
                 break;
             default:
                 map.tiles[index] = TILE_EMPTY;
