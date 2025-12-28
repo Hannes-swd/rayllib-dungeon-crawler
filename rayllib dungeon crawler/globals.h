@@ -2,5 +2,7 @@
 #include "raylib.h"
 
 extern int TILE_SIZE;
+extern Vector2 PlayerPosition;
+extern Camera2D Maincam;
 
-extern Vector2 PlayerPosition ;
+void InitCamera();

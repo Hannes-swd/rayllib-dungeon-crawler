@@ -19,6 +19,7 @@ int main(void)
     const int screenHeight = 450;
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(screenWidth, screenHeight, "Dungeon crawler");
+    InitCamera();
     SetTargetFPS(60);
 
     //map laden
@@ -38,21 +39,30 @@ int main(void)
 
     while (!WindowShouldClose())
     {
-        //timer:
+        // Spielerbewegung zuerst
+        CheckMoovment();
 
+        // Kamera
+        Maincam.target.x = PlayerPosition.x * TILE_SIZE;
+        Maincam.target.y = PlayerPosition.y * TILE_SIZE;
 
-        
-        //START ZEICHNEN
+        // Kamera-Offset
+        Maincam.offset.x = GetScreenWidth() / 2.0f;
+        Maincam.offset.y = GetScreenHeight() / 2.0f;
+
+        // START ZEICHNEN
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
 
-        //map zeichnen
+        BeginMode2D(Maincam);
+
+        // Map zeichnen
         DrawMap(map, TILE_SIZE);
 
-        //spieler zeichnen
+        // Spieler zeichnen
         DrawPlayer();
-        //spielerrmoovment
-        CheckMoovment();
+
+        EndMode2D();
 
 
         EndDrawing();
