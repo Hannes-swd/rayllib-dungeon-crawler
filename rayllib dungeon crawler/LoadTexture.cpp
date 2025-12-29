@@ -12,6 +12,7 @@ void loadTextures() {
     textures["Lava"] = LoadTexture("resources/Lava.png");
     textures["Wand"] = LoadTexture("resources/Wand.png");
     textures["Player"] = LoadTexture("resources/Player.png");
+    textures["Herz"] = LoadTexture("resources/Herz.png");
 }
 
 void unloadTextures() {

@@ -12,3 +12,5 @@ void InitCamera() {
     Maincam.rotation = 0.0f;
     Maincam.zoom = 4.0f;
 }
+
+int SpielerLeben = 10;

@@ -8,6 +8,7 @@
 #include "DrawMap.h"
 #include "Drawplayer.h"
 #include "PlayerMovment.h"
+#include "Ui.h"
 
 
 Map map;
@@ -64,6 +65,8 @@ int main(void)
 
         EndMode2D();
 
+		// UI zeichnen
+        DrawUi();
 
         EndDrawing();
     }

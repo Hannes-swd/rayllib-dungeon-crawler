@@ -6,3 +6,5 @@ extern Vector2 PlayerPosition;
 extern Camera2D Maincam;
 
 void InitCamera();
+
+extern int SpielerLeben;
