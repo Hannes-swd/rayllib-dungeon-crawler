@@ -1,3 +1,4 @@
+// globals.cpp
 #include <cstdlib>
 #include <ctime>
 #include "globals.h"
@@ -8,9 +9,22 @@ Camera2D Maincam = { 0 };
 
 void InitCamera() {
     Maincam.target = Vector2{ 0, 0 };
-    Maincam.offset = Vector2{ 400, 225 }; 
+    Maincam.offset = Vector2{ 400, 225 };
     Maincam.rotation = 0.0f;
-    Maincam.zoom = 4.0f;
+    Maincam.zoom = 1.0f;
+}
+
+float CurrentZoom = 1.0f;
+
+void UpdateCameraZoom() {
+    float screenWidth = (float)GetScreenWidth();
+    float screenHeight = (float)GetScreenHeight();
+
+    // sichtfeld
+    float targetTilesWidth = 10.0f;
+
+    CurrentZoom = screenWidth / (targetTilesWidth * TILE_SIZE);
+    Maincam.zoom = CurrentZoom;
 }
 
 int SpielerLeben = 10;

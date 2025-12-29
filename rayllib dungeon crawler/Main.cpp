@@ -1,4 +1,5 @@
-﻿#include "raylib.h"
+﻿// Main.cpp
+#include "raylib.h"
 #include <unordered_map>
 #include <string>
 #include "globals.h"
@@ -9,7 +10,6 @@
 #include "Drawplayer.h"
 #include "PlayerMovment.h"
 #include "Ui.h"
-
 
 Map map;
 
@@ -30,26 +30,26 @@ int main(void)
         CloseWindow();
         return -1;
     }
-    //CODE METODEN
 
+    // FESTER ZOOM (entferne die automatische Berechnung)
+    UpdateCameraZoom();
     //texturen laden
     loadTextures();
-
-    //Alle timer:
-
 
     while (!WindowShouldClose())
     {
         // Spielerbewegung zuerst
         CheckMoovment();
 
+        if (IsWindowResized()) {
+            Maincam.offset.x = GetScreenWidth() / 2.0f;
+            Maincam.offset.y = GetScreenHeight() / 2.0f;
+            UpdateCameraZoom();
+        }
+
         // Kamera
         Maincam.target.x = PlayerPosition.x * TILE_SIZE;
         Maincam.target.y = PlayerPosition.y * TILE_SIZE;
-
-        // Kamera-Offset
-        Maincam.offset.x = GetScreenWidth() / 2.0f;
-        Maincam.offset.y = GetScreenHeight() / 2.0f;
 
         // START ZEICHNEN
         BeginDrawing();
@@ -65,7 +65,7 @@ int main(void)
 
         EndMode2D();
 
-		// UI zeichnen
+        // UI zeichnen
         DrawUi();
 
         EndDrawing();
