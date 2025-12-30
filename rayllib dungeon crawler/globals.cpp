@@ -7,6 +7,7 @@ int TILE_SIZE = 32;
 Vector2 PlayerPosition = { 0, 0 };
 Camera2D Maincam = { 0 };
 
+
 void InitCamera() {
     Maincam.target = Vector2{ 0, 0 };
     Maincam.offset = Vector2{ 400, 225 };
@@ -28,3 +29,7 @@ void UpdateCameraZoom() {
 }
 
 int SpielerLeben = 10;
+
+bool Tot = false;
+
+Vector2 PlayerSpawn = { 1.0f, 1.0f };

@@ -10,3 +10,7 @@ void InitCamera();
 extern int SpielerLeben;
 extern float CurrentZoom;
 void UpdateCameraZoom();
+
+extern bool Tot;
+
+extern Vector2 PlayerSpawn;

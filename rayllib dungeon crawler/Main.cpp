@@ -10,6 +10,8 @@
 #include "Drawplayer.h"
 #include "PlayerMovment.h"
 #include "Ui.h"
+#include "damage.h"
+#include "Tot.h"
 
 Map map;
 
@@ -39,13 +41,21 @@ int main(void)
     while (!WindowShouldClose())
     {
         // Spielerbewegung zuerst
-        CheckMoovment();
+        if (!Tot) {
+            CheckMoovment();
+        }
+        
 
         if (IsWindowResized()) {
             Maincam.offset.x = GetScreenWidth() / 2.0f;
             Maincam.offset.y = GetScreenHeight() / 2.0f;
             UpdateCameraZoom();
         }
+
+		//wen spieler in lava ist
+		if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_LAVA) {
+            DealPlayerDamage(1);
+        };
 
         // Kamera
         Maincam.target.x = PlayerPosition.x * TILE_SIZE;
@@ -66,7 +76,14 @@ int main(void)
         EndMode2D();
 
         // UI zeichnen
-        DrawUi();
+        if (!Tot) {
+            DrawUi();
+        }
+
+        if (Tot) {
+            TotAnzeigen();
+		}
+        
 
         EndDrawing();
     }

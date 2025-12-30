@@ -46,6 +46,7 @@ Map LoadMapFromImage(const char* filename) {
                 map.tiles[index] = TILE_Boden;
                 PlayerPosition.x = (float)x;
                 PlayerPosition.y = (float)y;
+				PlayerSpawn = { (float)x, (float)y };
                 break;
             default:
                 map.tiles[index] = TILE_EMPTY;
