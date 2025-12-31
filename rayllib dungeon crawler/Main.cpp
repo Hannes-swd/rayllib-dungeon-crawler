@@ -33,18 +33,26 @@ int main(void)
         return -1;
     }
 
-    // FESTER ZOOM (entferne die automatische Berechnung)
+    // FESTER ZOOM
     UpdateCameraZoom();
     //texturen laden
     loadTextures();
 
+    //timer 
+    Timer DamageTimer;
+    DamageTimer.start(1.0f);
+
     while (!WindowShouldClose())
     {
+        //timer - Hier deltaTime mit GetFrameTime() definieren
+        float deltaTime = GetFrameTime();
+        DamageTimer.update(deltaTime);
+
         // Spielerbewegung zuerst
         if (!Tot) {
             CheckMoovment();
         }
-        
+
 
         if (IsWindowResized()) {
             Maincam.offset.x = GetScreenWidth() / 2.0f;
@@ -52,10 +60,13 @@ int main(void)
             UpdateCameraZoom();
         }
 
-		//wen spieler in lava ist
-		if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_LAVA) {
-            DealPlayerDamage(1);
-        };
+        //wen spieler in lava ist
+        if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_LAVA) {
+            if (DamageTimer.finished()) {
+                DealPlayerDamage(1);
+                DamageTimer.start(0.5f);
+            }
+        }
         //langsam wen er im wasser ist
         if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_WATER) {
             PlayerSpeed = 1.0f;
@@ -63,7 +74,7 @@ int main(void)
         else {
             PlayerSpeed = 3.0f;
         }
-        
+
 
         // Kamera
         Maincam.target.x = PlayerPosition.x * TILE_SIZE;
@@ -90,8 +101,8 @@ int main(void)
 
         if (Tot) {
             TotAnzeigen();
-		}
-        
+        }
+
 
         EndDrawing();
     }
