@@ -14,3 +14,5 @@ void UpdateCameraZoom();
 extern bool Tot;
 
 extern Vector2 PlayerSpawn;
+
+extern float PlayerSpeed;

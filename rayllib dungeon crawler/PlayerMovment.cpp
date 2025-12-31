@@ -34,7 +34,7 @@ bool CanPlayerBeAt(Vector2 position) {
 }
 
 void CheckMoovment() {
-    float moveSpeed = 5.0f;
+    float moveSpeed = PlayerSpeed;
     Vector2 newPosition = PlayerPosition;
 
     Vector2 oldPosition = PlayerPosition;

@@ -56,6 +56,14 @@ int main(void)
 		if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_LAVA) {
             DealPlayerDamage(1);
         };
+        //langsam wen er im wasser ist
+        if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_WATER) {
+            PlayerSpeed = 1.0f;
+        }
+        else {
+            PlayerSpeed = 3.0f;
+        }
+        
 
         // Kamera
         Maincam.target.x = PlayerPosition.x * TILE_SIZE;
