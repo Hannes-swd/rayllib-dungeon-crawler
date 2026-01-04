@@ -48,6 +48,10 @@ Map LoadMapFromImage(const char* filename) {
                 PlayerPosition.y = (float)y;
 				PlayerSpawn = { (float)x, (float)y };
                 break;
+                //mob spawn
+            case 0xF200FF:
+                map.tiles[index] = TILE_Boden;
+                break;
             default:
                 map.tiles[index] = TILE_EMPTY;
                 break;
