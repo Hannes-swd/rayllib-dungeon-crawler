@@ -132,6 +132,7 @@
     <ClCompile Include="damage.cpp" />
     <ClCompile Include="DrawMap.cpp" />
     <ClCompile Include="Drawplayer.cpp" />
+    <ClCompile Include="gegner.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="LoadMap.cpp" />
     <ClCompile Include="LoadTexture.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="damage.h" />
     <ClInclude Include="DrawMap.h" />
     <ClInclude Include="Drawplayer.h" />
+    <ClInclude Include="gegner.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="LoadMap.h" />
     <ClInclude Include="LoadTexture.h" />

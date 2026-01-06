@@ -48,6 +48,9 @@
     <ClCompile Include="Tot.cpp">
       <Filter>Headerdateien</Filter>
     </ClCompile>
+    <ClCompile Include="gegner.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoadTexture.h">
@@ -78,6 +81,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Tot.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="gegner.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

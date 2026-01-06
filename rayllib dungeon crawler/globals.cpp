@@ -33,5 +33,9 @@ int SpielerLeben = 10;
 
 bool Tot = false;
 
+
 Vector2 PlayerSpawn = { 1.0f, 1.0f };
 
+//gegner
+std::vector<Vector2> MobSpawner;
+std::vector<Gegner> GegnerAnzahl;

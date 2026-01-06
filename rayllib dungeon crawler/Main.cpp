@@ -42,6 +42,9 @@ int main(void)
     Timer DamageTimer;
     DamageTimer.start(1.0f);
 
+    //mobspawn
+    int mobspawncowntdown = 100;
+
     while (!WindowShouldClose())
     {
         //timer - Hier deltaTime mit GetFrameTime() definieren
@@ -76,6 +79,18 @@ int main(void)
         }
 
 
+        //mob spawn
+        if (GegnerAnzahl.size() < 10) {
+            if (mobspawncowntdown < 1) {
+                mobspawncowntdown = 100;
+                Spawngegner();
+            }
+            else {
+                mobspawncowntdown--;
+            }
+        }
+        
+
         // Kamera
         Maincam.target.x = PlayerPosition.x * TILE_SIZE;
         Maincam.target.y = PlayerPosition.y * TILE_SIZE;
@@ -92,7 +107,13 @@ int main(void)
         // Spieler zeichnen
         DrawPlayer();
 
+        //gegner
+        ZeichneGegner();
+		BewegeGegner(deltaTime);
+
         EndMode2D();
+
+        
 
         // UI zeichnen
         if (!Tot) {
@@ -103,6 +124,7 @@ int main(void)
             TotAnzeigen();
         }
 
+        
 
         EndDrawing();
     }

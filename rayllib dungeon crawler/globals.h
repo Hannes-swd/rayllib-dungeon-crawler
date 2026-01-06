@@ -1,5 +1,7 @@
 #pragma once
 #include "raylib.h"
+#include <vector>
+#include "gegner.h"
 
 extern int TILE_SIZE;
 extern Vector2 PlayerPosition;
@@ -16,3 +18,8 @@ extern bool Tot;
 extern Vector2 PlayerSpawn;
 
 extern float PlayerSpeed;
+
+//gegner
+extern std::vector<Vector2> MobSpawner;
+
+extern std::vector<Gegner> GegnerAnzahl;

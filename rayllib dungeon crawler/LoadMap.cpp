@@ -1,6 +1,9 @@
 ﻿#include "LoadMap.h"
 #include "globals.h"
 #include <cstdlib>
+#include <vector>
+#include <algorithm>
+
 
 Map LoadMapFromImage(const char* filename) {
     Image img = LoadImage(filename);
@@ -51,6 +54,7 @@ Map LoadMapFromImage(const char* filename) {
                 //mob spawn
             case 0xF200FF:
                 map.tiles[index] = TILE_Boden;
+                MobSpawner.push_back(Vector2{ (float)x, (float)y});
                 break;
             default:
                 map.tiles[index] = TILE_EMPTY;
