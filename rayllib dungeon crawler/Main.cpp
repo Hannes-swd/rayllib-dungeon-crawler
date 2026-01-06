@@ -110,18 +110,18 @@ int main(void)
         //gegner
         ZeichneGegner();
 		BewegeGegner(deltaTime);
+        GEgnerSchaden();
 
         EndMode2D();
 
         
 
         // UI zeichnen
-        if (!Tot) {
-            DrawUi();
-        }
-
         if (Tot) {
             TotAnzeigen();
+        }
+        else {
+            DrawUi();
         }
 
         
