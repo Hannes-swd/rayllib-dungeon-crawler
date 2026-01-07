@@ -31,6 +31,8 @@ int main(void)
     case 1:
         map = LoadMapFromImage("resources/map1.png");
         break;
+    case 2:
+        map = LoadMapFromImage("resources/map2.png");
     default:
         break;
     }
