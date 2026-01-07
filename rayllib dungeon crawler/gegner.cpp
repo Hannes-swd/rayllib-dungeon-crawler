@@ -144,19 +144,21 @@ void BewegeGegner(float deltaTime) {
     }
 }
 void GEgnerSchaden() {
-    for (size_t i = 0; i < GegnerAnzahl.size(); i++) {
-        if (!GegnerAnzahl[i].alive) continue;
+    for (size_t i = 0; i < GegnerAnzahl.size(); ) {
+        if (!GegnerAnzahl[i].alive) {
+            GegnerAnzahl.erase(GegnerAnzahl.begin() + i);
+            continue;
+        }
+
         float distanceToPlayer = std::sqrt(
             std::pow(PlayerPosition.x - GegnerAnzahl[i].position.x, 2) +
             std::pow(PlayerPosition.y - GegnerAnzahl[i].position.y, 2)
         );
+
         if (distanceToPlayer < 0.8f) {
             DealPlayerDamage(1);
-
-			GegnerAnzahl[i].alive = false;
-
-
-
+            GegnerAnzahl[i].alive = false;
         }
-	}
+        i++;
+    }
 }
