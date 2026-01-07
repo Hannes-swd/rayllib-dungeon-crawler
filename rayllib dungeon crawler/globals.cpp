@@ -3,6 +3,9 @@
 #include <ctime>
 #include "globals.h"
 
+//akttuelleslvl
+int akttuelleslvl = 1;
+
 int TILE_SIZE = 32;
 Vector2 PlayerPosition = { 0, 0 };
 Camera2D Maincam = { 0 };

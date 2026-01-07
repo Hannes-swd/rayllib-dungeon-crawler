@@ -26,7 +26,17 @@ int main(void)
     SetTargetFPS(60);
 
     //map laden
-    map = LoadMapFromImage("resources/map.png");
+    switch (akttuelleslvl)
+    {
+    case 1:
+        map = LoadMapFromImage("resources/map1.png");
+        break;
+    default:
+        break;
+    }
+    
+    
+    
     if (map.tiles == nullptr) {
         TraceLog(LOG_ERROR, "Failed to load map!");
         CloseWindow();
@@ -82,7 +92,7 @@ int main(void)
         //mob spawn
         if (GegnerAnzahl.size() < 10) {
             if (mobspawncowntdown < 1) {
-                mobspawncowntdown = 100;
+                mobspawncowntdown = 100 + (std::rand() % 901);
                 Spawngegner();
             }
             else {

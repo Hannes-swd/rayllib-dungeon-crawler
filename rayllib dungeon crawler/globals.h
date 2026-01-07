@@ -3,6 +3,9 @@
 #include <vector>
 #include "gegner.h"
 
+//aktuelles levl
+extern int akttuelleslvl;
+
 extern int TILE_SIZE;
 extern Vector2 PlayerPosition;
 extern Camera2D Maincam;
