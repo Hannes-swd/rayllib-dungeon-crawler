@@ -162,3 +162,33 @@ void GEgnerSchaden() {
         i++;
     }
 }
+void spielerSchaden() {
+    
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        Vector2 mousePos = GetScreenToWorld2D(GetMousePosition(), Maincam);
+
+        for (size_t i = 0; i < GegnerAnzahl.size(); i++) {
+            float enemyScreenX = GegnerAnzahl[i].position.x * TILE_SIZE;
+            float enemyScreenY = GegnerAnzahl[i].position.y * TILE_SIZE;
+
+            float distance = sqrt(
+                pow(mousePos.x - enemyScreenX, 2) +
+                pow(mousePos.y - enemyScreenY, 2)
+            );
+            /*
+            DrawRectangleLines(
+                enemyScreenX,
+                enemyScreenY,
+                TILE_SIZE,
+                TILE_SIZE,
+                RED
+            );
+            */
+            if (distance < 26.0f) {
+                GegnerAnzahl[i].alive = false;
+
+                break;
+            }
+        }
+    }
+}

@@ -17,3 +17,4 @@ void Spawngegner();
 void ZeichneGegner();
 void BewegeGegner(float deltaTime);
 void GEgnerSchaden();
+void spielerSchaden();

@@ -135,6 +135,7 @@ int main(void)
         ZeichneGegner();
 		BewegeGegner(deltaTime);
         GEgnerSchaden();
+        spielerSchaden();
 
         EndMode2D();
 
