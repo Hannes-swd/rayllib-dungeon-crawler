@@ -2,6 +2,7 @@
 #include "globals.h"
 #include "LoadTexture.h"
 #include "damage.h"
+#include "drop.h"
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
@@ -186,7 +187,7 @@ void spielerSchaden() {
             */
             if (distance < 26.0f) {
                 GegnerAnzahl[i].alive = false;
-
+                Drop("herz", 1, mousePos.x , mousePos.y);
                 break;
             }
         }
