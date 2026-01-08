@@ -93,12 +93,24 @@ int main(void)
 
         //mob spawn
         if (GegnerAnzahl.size() < 10) {
-            if (mobspawncowntdown < 1) {
-                mobspawncowntdown = 100 + (std::rand() % 901);
-                Spawngegner();
+            
+            if (GegnerAnzahl.size() < 5) {
+                if (mobspawncowntdown < 1) {
+                    mobspawncowntdown = 100 + (std::rand() % 501); // 100-600
+                    Spawngegner();
+                }
+                else {
+                    mobspawncowntdown--;
+                }
             }
             else {
-                mobspawncowntdown--;
+                if (mobspawncowntdown < 1) {
+                    mobspawncowntdown = 100 + (std::rand() % 901); // 100-1000
+                    Spawngegner();
+                }
+                else {
+                    mobspawncowntdown--;
+                }
             }
         }
         

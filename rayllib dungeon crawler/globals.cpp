@@ -4,7 +4,7 @@
 #include "globals.h"
 
 //akttuelleslvl
-int akttuelleslvl = 2;
+int akttuelleslvl = 1;
 
 int TILE_SIZE = 32;
 Vector2 PlayerPosition = { 0, 0 };
