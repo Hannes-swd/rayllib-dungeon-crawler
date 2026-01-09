@@ -74,7 +74,7 @@ void Spawngegner() {
 void ZeichneGegner() {
     for (size_t i = 0; i < GegnerAnzahl.size(); i++) {
         if (GegnerAnzahl[i].alive) {
-            DrawTexture("Zaber",
+            DrawTexture("Gegner",
                 GegnerAnzahl[i].position.x * TILE_SIZE,
                 GegnerAnzahl[i].position.y * TILE_SIZE,
                 32.0f,
