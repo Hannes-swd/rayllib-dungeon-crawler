@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include <vector>
 #include "gegner.h"
+#include "drop.h"
 
 //aktuelles levl
 extern int akttuelleslvl;
@@ -26,3 +27,6 @@ extern float PlayerSpeed;
 extern std::vector<Vector2> MobSpawner;
 
 extern std::vector<Gegner> GegnerAnzahl;
+
+// Drop-Items
+extern std::vector<DropItem> DropItems;

@@ -137,6 +137,10 @@ int main(void)
         GEgnerSchaden();
         spielerSchaden();
 
+        // drops anzeigen
+        DrawDropItems();
+        CollectDropItems();
+
         EndMode2D();
 
         
