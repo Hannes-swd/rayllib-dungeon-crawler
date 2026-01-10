@@ -164,32 +164,38 @@ void GEgnerSchaden() {
     }
 }
 void spielerSchaden() {
-    
-    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-        Vector2 mousePos = GetScreenToWorld2D(GetMousePosition(), Maincam);
+    Vector2 mousePos = GetScreenToWorld2D(GetMousePosition(), Maincam);
 
-        for (size_t i = 0; i < GegnerAnzahl.size(); i++) {
-            float enemyScreenX = GegnerAnzahl[i].position.x * TILE_SIZE;
-            float enemyScreenY = GegnerAnzahl[i].position.y * TILE_SIZE;
+    for (size_t i = 0; i < GegnerAnzahl.size(); i++) {
+        float enemyScreenX = GegnerAnzahl[i].position.x * TILE_SIZE;
+        float enemyScreenY = GegnerAnzahl[i].position.y * TILE_SIZE;
 
-            float distance = sqrt(
-                pow(mousePos.x - enemyScreenX, 2) +
-                pow(mousePos.y - enemyScreenY, 2)
-            );
-            /*
-            DrawRectangleLines(
-                enemyScreenX,
-                enemyScreenY,
-                TILE_SIZE,
-                TILE_SIZE,
-                RED
-            );
-            */
-            if (distance < 26.0f) {
+        float distance = sqrt(
+            pow(mousePos.x - enemyScreenX, 2) +
+            pow(mousePos.y - enemyScreenY, 2)
+        );
+
+        
+        Rectangle enemyHitbox = { enemyScreenX, enemyScreenY, TILE_SIZE, TILE_SIZE };
+        bool mouseInHitbox = CheckCollisionPointRec(mousePos, enemyHitbox);
+
+        if (distance < 20.0f && mouseInHitbox) {
+            //DrawRectangleLinesEx(enemyHitbox, 3.0f, RED); Hitbox
+
+            DrawTexture("schwert",
+                GegnerAnzahl[i].position.x * TILE_SIZE,
+                GegnerAnzahl[i].position.y * TILE_SIZE,
+                32.0f,
+                32.0f,
+                WHITE);
+
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 GegnerAnzahl[i].alive = false;
-                Drop("herz", 1, mousePos.x , mousePos.y);
+                Drop("herz", 1, mousePos.x, mousePos.y);
                 break;
             }
         }
+
+        
     }
 }
