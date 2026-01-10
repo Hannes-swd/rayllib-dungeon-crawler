@@ -12,6 +12,8 @@ Camera2D Maincam = { 0 };
 
 float PlayerSpeed = 3.0f;
 
+int energie = 10;
+
 void InitCamera() {
     Maincam.target = Vector2{ 0, 0 };
     Maincam.offset = Vector2{ 400, 225 };

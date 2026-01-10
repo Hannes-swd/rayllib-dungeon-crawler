@@ -13,6 +13,8 @@ extern Camera2D Maincam;
 
 void InitCamera();
 
+extern int energie;
+
 extern int SpielerLeben;
 extern float CurrentZoom;
 void UpdateCameraZoom();

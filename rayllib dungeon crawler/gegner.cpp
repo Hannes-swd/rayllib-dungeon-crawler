@@ -179,23 +179,27 @@ void spielerSchaden() {
         Rectangle enemyHitbox = { enemyScreenX, enemyScreenY, TILE_SIZE, TILE_SIZE };
         bool mouseInHitbox = CheckCollisionPointRec(mousePos, enemyHitbox);
 
-        if (distance < 20.0f && mouseInHitbox) {
-            //DrawRectangleLinesEx(enemyHitbox, 3.0f, RED); Hitbox
-
-            DrawTexture("schwert",
-                GegnerAnzahl[i].position.x * TILE_SIZE,
-                GegnerAnzahl[i].position.y * TILE_SIZE,
-                32.0f,
-                32.0f,
-                WHITE);
-
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                GegnerAnzahl[i].alive = false;
-                Drop("herz", 1, mousePos.x, mousePos.y);
-                break;
-            }
-        }
-
+        //DrawRectangleLinesEx(enemyHitbox, 3.0f, RED); Hitbox
         
+        if (distance < 20.0f && mouseInHitbox) {
+            
+            if (energie > 0) {
+                DrawTexture("schwert",
+                    GegnerAnzahl[i].position.x * TILE_SIZE,
+                    GegnerAnzahl[i].position.y * TILE_SIZE,
+                    32.0f,
+                    32.0f,
+                    WHITE);
+
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                    GegnerAnzahl[i].alive = false;
+                    energie--;
+                    Drop("herz", 1, mousePos.x, mousePos.y);
+
+                    break;
+                }
+            }
+            
+        }
     }
 }
