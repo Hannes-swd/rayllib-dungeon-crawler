@@ -47,3 +47,8 @@ std::vector<Gegner> GegnerAnzahl;
 
 // Drop-Items
 std::vector<DropItem> DropItems;
+
+
+//kisten
+std::vector<Vector2> Kisten;
+std::vector<Kiste> Kistenanzahl;

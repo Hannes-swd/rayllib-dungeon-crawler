@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include <vector>
 #include "gegner.h"
+#include "Kiste.h"
 #include "drop.h"
 
 //aktuelles levl
@@ -32,3 +33,7 @@ extern std::vector<Gegner> GegnerAnzahl;
 
 // Drop-Items
 extern std::vector<DropItem> DropItems;
+
+//kisten
+extern std::vector<Vector2> Kisten;
+extern std::vector<Kiste> Kistenanzahl;

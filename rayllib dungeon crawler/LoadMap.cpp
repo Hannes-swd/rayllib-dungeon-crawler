@@ -20,7 +20,7 @@ Map LoadMapFromImage(const char* filename) {
         UnloadImage(img);
         return map;
     }
-
+    Kisten.clear();
     for (int y = 0; y < img.height; y++) {
         for (int x = 0; x < img.width; x++) {
             Color c = pixels[y * img.width + x];
@@ -55,6 +55,11 @@ Map LoadMapFromImage(const char* filename) {
             case 0xF200FF:
                 map.tiles[index] = TILE_Boden;
                 MobSpawner.push_back(Vector2{ (float)x, (float)y});
+                break;
+                //kisten 
+            case 0xff0000:
+                map.tiles[index] = TILE_Boden;
+                Kisten.push_back(Vector2{ (float)x, (float)y });
                 break;
             default:
                 map.tiles[index] = TILE_EMPTY;
