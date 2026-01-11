@@ -135,6 +135,7 @@
     <ClCompile Include="drop.cpp" />
     <ClCompile Include="gegner.cpp" />
     <ClCompile Include="globals.cpp" />
+    <ClCompile Include="Kiste.cpp" />
     <ClCompile Include="LoadMap.cpp" />
     <ClCompile Include="LoadTexture.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="drop.h" />
     <ClInclude Include="gegner.h" />
     <ClInclude Include="globals.h" />
+    <ClInclude Include="Kiste.h" />
     <ClInclude Include="LoadMap.h" />
     <ClInclude Include="LoadTexture.h" />
     <ClInclude Include="PlayerMovment.h" />

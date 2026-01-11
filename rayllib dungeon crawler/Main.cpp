@@ -12,6 +12,7 @@
 #include "Ui.h"
 #include "damage.h"
 #include "Tot.h"
+#include "Kiste.h"
 
 Map map;
 
@@ -130,6 +131,10 @@ int main(void)
 
         // Spieler zeichnen
         DrawPlayer();
+
+        //kisten
+        EndereKistenPosition();
+
 
         //gegner
         ZeichneGegner();

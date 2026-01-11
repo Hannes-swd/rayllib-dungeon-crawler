@@ -194,7 +194,10 @@ void spielerSchaden() {
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                     GegnerAnzahl[i].alive = false;
                     energie--;
-                    Drop("herz", 1, mousePos.x, mousePos.y);
+                    bool BekommtHerz = rand() % 100 < 30;
+                    if (BekommtHerz)
+                        Drop("herz", 1, mousePos.x, mousePos.y);
+                    
 
                     break;
                 }
