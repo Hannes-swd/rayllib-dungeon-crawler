@@ -134,7 +134,7 @@ int main(void)
 
         //kisten
         EndereKistenPosition();
-
+        DrawKisten();
 
         //gegner
         ZeichneGegner();
