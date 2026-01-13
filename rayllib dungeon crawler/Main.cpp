@@ -47,6 +47,9 @@ int main(void)
     }
     //Kiste endern
     EndereKistenPosition();
+
+    
+
     // FESTER ZOOM
     UpdateCameraZoom();
     //texturen laden
@@ -135,6 +138,8 @@ int main(void)
 
         //kisten
         DrawKisten();
+        //kiste sammeln
+        SammleKisten();
 
         //gegner
         ZeichneGegner();

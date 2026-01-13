@@ -3,6 +3,7 @@
 
 void EndereKistenPosition();
 void DrawKisten();
+void SammleKisten();
 
 typedef struct Kiste {
     Vector2 Position;
