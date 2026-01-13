@@ -20,6 +20,7 @@ void loadTextures() {
     textures["Energie_2"] = LoadTexture("resources/Energie_2.png");
     textures["Energie_3"] = LoadTexture("resources/Energie_3.png"); 
     textures["kiste"] = LoadTexture("resources/kiste.png");
+    textures["energie_orb"] = LoadTexture("resources/energie_orb.png");
 }
 
 void unloadTextures() {

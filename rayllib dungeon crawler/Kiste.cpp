@@ -58,8 +58,14 @@ void SammleKisten() {
 
         if (distanceToPlayer < 1.0f) {
             if (IsKeyPressed(KEY_E)) {
+                Vector2 kistenPosition = Kistenanzahl[i].Position;
+
                 Kistenanzahl.erase(Kistenanzahl.begin() + i);
-                energie = std::min(energie + 1, 10);
+
+                Drop("energie", 1,
+                    kistenPosition.x * TILE_SIZE,
+                    kistenPosition.y * TILE_SIZE);
+
                 EndereKistenPosition();
                 break;
             }

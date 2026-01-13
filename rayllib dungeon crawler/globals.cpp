@@ -4,7 +4,7 @@
 #include "globals.h"
 
 //akttuelleslvl
-int akttuelleslvl = 2;
+int akttuelleslvl = 1;
 
 int TILE_SIZE = 32;
 Vector2 PlayerPosition = { 0, 0 };
@@ -52,7 +52,7 @@ std::vector<DropItem> DropItems;
 //kisten
 std::vector<Vector2> Kisten;
 std::vector<Kiste> Kistenanzahl;
-int kistenanzahl = 3;
+int kistenanzahl = 1;
 void InitRandom() {
     std::srand(std::time(nullptr));
 }
