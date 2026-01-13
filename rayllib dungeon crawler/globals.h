@@ -37,6 +37,8 @@ extern std::vector<DropItem> DropItems;
 //kisten
 extern std::vector<Vector2> Kisten;
 extern std::vector<Kiste> Kistenanzahl;
+extern int kistenanzahl;
+
 
 extern void EndereKistenPosition();
 extern void DrawKisten();

@@ -3,16 +3,40 @@
 #include "LoadMap.h"
 #include "LoadTexture.h"
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
 
 void EndereKistenPosition() {
     Kistenanzahl.clear();
 
-    for (const Vector2& pos : Kisten) {
+    if (Kisten.empty() || kistenanzahl <= 0) {
+        return;
+    }
+
+    std::srand(std::time(nullptr));
+
+    std::vector<Vector2> verfügbarePositionen = Kisten;
+
+    int anzahlZuWählen = std::min(kistenanzahl, (int)verfügbarePositionen.size());
+
+    for (int i = 0; i < anzahlZuWählen; i++) {
+        int randomIndex = std::rand() % verfügbarePositionen.size();
+
         Kiste neueKiste;
-        neueKiste.Position = pos;
+        neueKiste.Position = verfügbarePositionen[randomIndex];
         neueKiste.timer = 25.0f;
         Kistenanzahl.push_back(neueKiste);
+
+        verfügbarePositionen.erase(verfügbarePositionen.begin() + randomIndex);
+
+        if (verfügbarePositionen.empty()) {
+            break;
+        }
     }
+
+    TraceLog(LOG_INFO, TextFormat("%d Kisten generiert von %d verfügbaren Positionen",
+        (int)Kistenanzahl.size(), (int)Kisten.size()));
 }
 
 void DrawKisten() {
