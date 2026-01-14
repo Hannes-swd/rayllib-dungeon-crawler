@@ -16,9 +16,12 @@ void loadTextures() {
 	textures["Zaber"] = LoadTexture("resources/zaber.png");
 	textures["Gegner"] = LoadTexture("resources/Gegner.png");
     textures["schwert"] = LoadTexture("resources/schwert.png");
-    textures["Energie_1"] = LoadTexture("resources/Energie_1.png");
-    textures["Energie_2"] = LoadTexture("resources/Energie_2.png");
-    textures["Energie_3"] = LoadTexture("resources/Energie_3.png"); 
+    textures["Energie_1"] = LoadTexture("resources/Energie_1.png");//energie start
+    textures["Energie_2"] = LoadTexture("resources/Energie_2.png");//energie Mitte
+    textures["Energie_3"] = LoadTexture("resources/Energie_3.png"); //energie ende
+    textures["Energie_4"] = LoadTexture("resources/Energie_4.png");//energie ende grau
+    textures["Energie_5"] = LoadTexture("resources/Energie_5.png");//energie mitte grau
+    textures["Energie_6"] = LoadTexture("resources/Energie_6.png");//energie start grau
     textures["kiste"] = LoadTexture("resources/kiste.png");
     textures["energie_orb"] = LoadTexture("resources/energie_orb.png");
 }

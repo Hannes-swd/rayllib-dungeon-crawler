@@ -61,7 +61,7 @@ void CollectDropItems() {
             pow(PlayerPosition.y - DropItems[i].position.y, 2)
         );
 
-        if (distance < 0.8f) {
+        if (distance < 1.0f) {
             bool itemCollected = false;
 
             if (DropItems[i].itemName == "herz") {

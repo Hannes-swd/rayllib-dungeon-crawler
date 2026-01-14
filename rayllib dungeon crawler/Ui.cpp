@@ -7,15 +7,24 @@ void DrawUi() {
 	for (int i = 0; i < SpielerLeben; i++) {
 		DrawTexture("Herz", 10 + i * 34, 5, 32, 32);
 	}
-	for (int i = 0; i < energie; i++) {
-		if (i == 0) {
+	for (int i = 0; i < 10; i++) {
+		if (i == 0 && energie > 0) {
 			DrawTexture("Energie_1", 10 + i * 32, 50, 32, 32);
 		}
-		else if (i == energie - 1) {
+		else if (i == 0 && energie <= 0) {
+			DrawTexture("Energie_6", 10 + i * 32, 50, 32, 32);
+		}
+		else if (i == 9 && energie >= 10) {
 			DrawTexture("Energie_3", 10 + i * 32, 50, 32, 32);
 		}
-		else {
+		else if (i == 9 && energie < 10) {
+			DrawTexture("Energie_4", 10 + i * 32, 50, 32, 32);
+		}
+		else if (i < energie && i > 0) {
 			DrawTexture("Energie_2", 10 + i * 32, 50, 32, 32);
+		}
+		else if (i >= energie && i < 9) {
+			DrawTexture("Energie_5", 10 + i * 32, 50, 32, 32);
 		}
 		
 	}
