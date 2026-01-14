@@ -62,7 +62,7 @@ void SammleKisten() {
 
                 Kistenanzahl.erase(Kistenanzahl.begin() + i);
 
-                Drop("energie", 1,
+                Drop("energie", 2,
                     kistenPosition.x * TILE_SIZE,
                     kistenPosition.y * TILE_SIZE);
 

@@ -7,26 +7,30 @@
 
 void Drop(std::string Item, int anzahl, int x, int y) {
     if (Item == "herz") {
-        DropItem newDrop;
-        newDrop.itemName = "herz";
-        float offsetX = (rand() % 20 - 10) / 10.0f;
-        float offsetY = (rand() % 20 - 10) / 10.0f;
-        newDrop.position = Vector2{
-            static_cast<float>(x) / TILE_SIZE + offsetX,
-            static_cast<float>(y) / TILE_SIZE + offsetY
-        };
-        DropItems.push_back(newDrop);
+        for (int i = 0; i < anzahl; i++) {
+            DropItem newDrop;
+            newDrop.itemName = "herz";
+            float offsetX = (rand() % 20 - 10) / 10.0f;
+            float offsetY = (rand() % 20 - 10) / 10.0f;
+            newDrop.position = Vector2{
+                static_cast<float>(x) / TILE_SIZE + offsetX,
+                static_cast<float>(y) / TILE_SIZE + offsetY
+            };
+            DropItems.push_back(newDrop);
+		}
     }
     if (Item == "energie") {
-        DropItem newDrop;
-        newDrop.itemName = "energie";
-        float offsetX = (rand() % 20 - 10) / 10.0f;
-        float offsetY = (rand() % 20 - 10) / 10.0f;
-        newDrop.position = Vector2{
-            static_cast<float>(x) / TILE_SIZE + offsetX,
-            static_cast<float>(y) / TILE_SIZE + offsetY
-        };
-        DropItems.push_back(newDrop);
+        for (int i = 0; i < anzahl; i++) {
+            DropItem newDrop;
+            newDrop.itemName = "energie";
+            float offsetX = (rand() % 20 - 10) / 10.0f;
+            float offsetY = (rand() % 20 - 10) / 10.0f;
+            newDrop.position = Vector2{
+                static_cast<float>(x) / TILE_SIZE + offsetX,
+                static_cast<float>(y) / TILE_SIZE + offsetY
+            };
+            DropItems.push_back(newDrop);
+        }
     }
 }
 void DrawDropItems() {
