@@ -61,8 +61,8 @@ void SammleKisten() {
                 Vector2 kistenPosition = Kistenanzahl[i].Position;
 
                 Kistenanzahl.erase(Kistenanzahl.begin() + i);
-
-                Drop("energie", 2,
+				int zufalsanzahl = rand() % 3 + 1; // 1- 3
+                Drop("energie", zufalsanzahl,
                     kistenPosition.x * TILE_SIZE,
                     kistenPosition.y * TILE_SIZE);
 

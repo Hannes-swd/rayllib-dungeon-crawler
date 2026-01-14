@@ -52,7 +52,7 @@ std::vector<DropItem> DropItems;
 //kisten
 std::vector<Vector2> Kisten;
 std::vector<Kiste> Kistenanzahl;
-int kistenanzahl = 1;
+int kistenanzahl = 2;
 void InitRandom() {
     std::srand(std::time(nullptr));
 }
