@@ -13,6 +13,7 @@
 #include "damage.h"
 #include "Tot.h"
 #include "Kiste.h"
+#include "Menü.h"
 
 Map map;
 
@@ -26,17 +27,7 @@ int main(void)
     InitCamera();
     SetTargetFPS(60);
 
-    //map laden
-    switch (akttuelleslvl)
-    {
-    case 1:
-        map = LoadMapFromImage("resources/map1.png");
-        break;
-    case 2:
-        map = LoadMapFromImage("resources/map2.png");
-    default:
-        break;
-    }
+    
     
     
     
@@ -46,8 +37,9 @@ int main(void)
         return -1;
     }
     //Kiste endern
+    
     EndereKistenPosition();
-
+    
     
 
     // FESTER ZOOM
@@ -64,12 +56,26 @@ int main(void)
 
     while (!WindowShouldClose())
     {
+
+        //map laden
+        if (MenüOffen) {
+            switch (akttuelleslvl)
+            {
+            case 1:
+                map = LoadMapFromImage("resources/map1.png");
+                break;
+            case 2:
+                map = LoadMapFromImage("resources/map2.png");
+            default:
+                break;
+            }
+        }
         //timer - Hier deltaTime mit GetFrameTime() definieren
         float deltaTime = GetFrameTime();
         DamageTimer.update(deltaTime);
 
         // Spielerbewegung zuerst
-        if (!Tot) {
+        if (!Tot && !MenüOffen) {
             CheckMoovment();
         }
 
@@ -97,7 +103,7 @@ int main(void)
 
 
         //mob spawn
-        if (GegnerAnzahl.size() < 10) {
+        if (GegnerAnzahl.size() < 10 && !MenüOffen) {
             
             if (GegnerAnzahl.size() < 5) {
                 if (mobspawncowntdown < 1) {
@@ -143,9 +149,11 @@ int main(void)
 
         //gegner
         ZeichneGegner();
+        if (!MenüOffen){
 		BewegeGegner(deltaTime);
         GEgnerSchaden();
         spielerSchaden();
+        }
 
         // drops anzeigen
         DrawDropItems();
@@ -163,6 +171,10 @@ int main(void)
             DrawUi();
         }
 
+        if (MenüOffen) {
+            ZeichneMenü();
+        }
+        
         
 
         EndDrawing();

@@ -3,6 +3,9 @@
 #include <ctime>
 #include "globals.h"
 
+// Menü offen
+bool MenüOffen = true;
+
 //akttuelleslvl
 int akttuelleslvl = 1;
 

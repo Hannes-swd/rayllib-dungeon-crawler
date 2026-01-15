@@ -5,6 +5,9 @@
 #include "Kiste.h"
 #include "drop.h"
 
+
+//menü offen
+extern bool MenüOffen;
 //aktuelles levl
 extern int akttuelleslvl;
 
