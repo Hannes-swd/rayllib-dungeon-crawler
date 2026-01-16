@@ -10,6 +10,7 @@
 extern bool MenüOffen;
 //aktuelles levl
 extern int akttuelleslvl;
+extern int LEtzteslvl;
 
 extern int TILE_SIZE;
 extern Vector2 PlayerPosition;
@@ -45,3 +46,4 @@ extern int kistenanzahl;
 
 extern void EndereKistenPosition();
 extern void DrawKisten();
+

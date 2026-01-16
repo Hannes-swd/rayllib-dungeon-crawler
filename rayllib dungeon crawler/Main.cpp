@@ -17,6 +17,8 @@
 
 Map map;
 
+
+
 int main(void)
 {
     //programm infos
@@ -27,20 +29,17 @@ int main(void)
     InitCamera();
     SetTargetFPS(60);
 
-    
-    
-    
-    
+    // ERSTE MAP LADEN
+    MapLaden(akttuelleslvl, map);
+
     if (map.tiles == nullptr) {
         TraceLog(LOG_ERROR, "Failed to load map!");
         CloseWindow();
         return -1;
     }
-    //Kiste endern
-    
+
+    // Kisten setzen
     EndereKistenPosition();
-    
-    
 
     // FESTER ZOOM
     UpdateCameraZoom();
@@ -56,20 +55,11 @@ int main(void)
 
     while (!WindowShouldClose())
     {
-
-        //map laden
-        if (MenüOffen) {
-            switch (akttuelleslvl)
-            {
-            case 1:
-                map = LoadMapFromImage("resources/map1.png");
-                break;
-            case 2:
-                map = LoadMapFromImage("resources/map2.png");
-            default:
-                break;
-            }
+        //aktualisiert wen aktuelle map nicht ist
+        if (akttuelleslvl != LEtzteslvl) {
+            MapLaden(akttuelleslvl, map);
         }
+
         //timer - Hier deltaTime mit GetFrameTime() definieren
         float deltaTime = GetFrameTime();
         DamageTimer.update(deltaTime);
@@ -79,32 +69,38 @@ int main(void)
             CheckMoovment();
         }
 
-
         if (IsWindowResized()) {
             Maincam.offset.x = GetScreenWidth() / 2.0f;
             Maincam.offset.y = GetScreenHeight() / 2.0f;
             UpdateCameraZoom();
         }
 
-        //wen spieler in lava ist
-        if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_LAVA) {
-            if (DamageTimer.finished()) {
-                DealPlayerDamage(1);
-                DamageTimer.start(0.5f);
+        // Prüfen ob Position innerhalb der Map ist
+        int playerTileX = (int)PlayerPosition.x;
+        int playerTileY = (int)PlayerPosition.y;
+
+        if (playerTileX >= 0 && playerTileX < map.width &&
+            playerTileY >= 0 && playerTileY < map.height) {
+
+            //wen spieler in lava ist
+            if (map.tiles[playerTileY * map.width + playerTileX] == TILE_LAVA) {
+                if (DamageTimer.finished()) {
+                    DealPlayerDamage(1);
+                    DamageTimer.start(0.5f);
+                }
+            }
+
+            //langsam wen er im wasser ist
+            if (map.tiles[playerTileY * map.width + playerTileX] == TILE_WATER) {
+                PlayerSpeed = 1.0f;
+            }
+            else {
+                PlayerSpeed = 3.0f;
             }
         }
-        //langsam wen er im wasser ist
-        if (map.tiles[(int)PlayerPosition.y * map.width + (int)PlayerPosition.x] == TILE_WATER) {
-            PlayerSpeed = 1.0f;
-        }
-        else {
-            PlayerSpeed = 3.0f;
-        }
 
-
-        //mob spawn
+        //mob spawn - NUR wenn Menü geschlossen ist
         if (GegnerAnzahl.size() < 10 && !MenüOffen) {
-            
             if (GegnerAnzahl.size() < 5) {
                 if (mobspawncowntdown < 1) {
                     mobspawncowntdown = 100 + (std::rand() % 501); // 100-600
@@ -124,7 +120,6 @@ int main(void)
                 }
             }
         }
-        
 
         // Kamera
         Maincam.target.x = PlayerPosition.x * TILE_SIZE;
@@ -149,10 +144,10 @@ int main(void)
 
         //gegner
         ZeichneGegner();
-        if (!MenüOffen){
-		BewegeGegner(deltaTime);
-        GEgnerSchaden();
-        spielerSchaden();
+        if (!MenüOffen) {
+            BewegeGegner(deltaTime);
+            GEgnerSchaden();
+            spielerSchaden();
         }
 
         // drops anzeigen
@@ -160,8 +155,6 @@ int main(void)
         CollectDropItems();
 
         EndMode2D();
-
-        
 
         // UI zeichnen
         if (Tot) {
@@ -174,11 +167,10 @@ int main(void)
         if (MenüOffen) {
             ZeichneMenü();
         }
-        
-        
 
         EndDrawing();
     }
+
     //map unloaden
     UnloadMap(map);
     //texturen unloaden

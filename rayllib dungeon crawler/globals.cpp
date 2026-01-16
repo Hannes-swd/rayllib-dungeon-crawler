@@ -4,10 +4,12 @@
 #include "globals.h"
 
 // Menü offen
-bool MenüOffen = true;
+bool MenüOffen = false;
 
 //akttuelleslvl
 int akttuelleslvl = 1;
+int LEtzteslvl = 1;
+
 
 int TILE_SIZE = 32;
 Vector2 PlayerPosition = { 0, 0 };
@@ -59,3 +61,4 @@ int kistenanzahl = 2;
 void InitRandom() {
     std::srand(std::time(nullptr));
 }
+
