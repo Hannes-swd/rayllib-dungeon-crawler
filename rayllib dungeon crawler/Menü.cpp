@@ -9,6 +9,15 @@
 
 void ZeichneMenü() {
 	DrawCircle(50, 50, 50, RED);
+
+    //geht raus
+    if (IsKeyPressed(KEY_ESCAPE) && !menüGeendert) {
+
+        MenüOffen = false;
+    }
+    if (menüGeendert == true && IsKeyUp(KEY_ESCAPE)) {
+        menüGeendert = false;
+    }
 }
 
 void MapLaden(int level, Map& map) {

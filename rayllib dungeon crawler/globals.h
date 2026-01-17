@@ -8,6 +8,7 @@
 
 //menü offen
 extern bool MenüOffen;
+extern bool menüGeendert;
 //aktuelles levl
 extern int akttuelleslvl;
 extern int LEtzteslvl;

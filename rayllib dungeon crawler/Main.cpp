@@ -55,6 +55,15 @@ int main(void)
 
     while (!WindowShouldClose())
     {
+        SetExitKey(KEY_NULL);
+
+        //wechselt in esc menü
+        if (!MenüOffen && IsKeyPressed(KEY_ESCAPE)) {
+            MenüOffen = true;
+            menüGeendert = true;
+        }
+            
+
         //aktualisiert wen aktuelle map nicht ist
         if (akttuelleslvl != LEtzteslvl) {
             MapLaden(akttuelleslvl, map);

@@ -4,7 +4,8 @@
 #include "globals.h"
 
 // Menü offen
-bool MenüOffen = false;
+bool MenüOffen = true;
+bool menüGeendert = false;
 
 //akttuelleslvl
 int akttuelleslvl = 1;
