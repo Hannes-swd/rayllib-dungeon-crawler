@@ -18,14 +18,7 @@ void ZeichneMenü() {
     //text
 	DrawText("Test Menü", windowWidth / 2 - MeasureText("Test Menü", 20) / 2, windowHeight / 4 + 20, 20, WHITE);
 	// map bild mittig zeichnen
-    DrawTexture(
-        map,
-        windowWidth / 2 - (200 / 2),
-        windowHeight / 2 - (200 / 2),
-        200,
-        200,
-        WHITE
-	);
+    
 
     fensterschliesen();
 }

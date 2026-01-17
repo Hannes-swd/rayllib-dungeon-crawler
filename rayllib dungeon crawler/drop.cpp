@@ -8,6 +8,7 @@
 void Drop(std::string Item, int anzahl, int x, int y) {
     if (Item == "herz") {
         for (int i = 0; i < anzahl; i++) {
+
             DropItem newDrop;
             newDrop.itemName = "herz";
             float offsetX = (rand() % 20 - 10) / 10.0f;
@@ -69,8 +70,11 @@ void CollectDropItems() {
             bool itemCollected = false;
 
             if (DropItems[i].itemName == "herz") {
-                SpielerLeben = std::min(SpielerLeben + 1, 10);
-                itemCollected = true;
+                if (SpielerLeben < 10) {
+                    SpielerLeben = std::min(SpielerLeben + 1, 10);
+                    itemCollected = true;
+                }
+                
             }
             else if (DropItems[i].itemName == "energie") {
                 if (energie < 10) {
