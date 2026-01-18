@@ -10,6 +10,7 @@ bool menüGeendert = false;
 //akttuelleslvl
 int akttuelleslvl = 1;
 int LEtzteslvl = 1;
+int levelanzahl = 1;
 
 
 int TILE_SIZE = 32;

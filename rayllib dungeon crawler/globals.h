@@ -12,6 +12,7 @@ extern bool menüGeendert;
 //aktuelles levl
 extern int akttuelleslvl;
 extern int LEtzteslvl;
+extern int levelanzahl;
 
 extern int TILE_SIZE;
 extern Vector2 PlayerPosition;
