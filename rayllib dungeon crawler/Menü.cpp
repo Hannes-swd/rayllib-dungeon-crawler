@@ -24,6 +24,15 @@ void ZeichneMenü() {
         windowHeight / 4 + 60, 20, WHITE);
     
 
+    
+    float previewSize = GetScreenWidth() / 2.0f * 0.35f;
+    float previewX = GetScreenWidth() / 2 - previewSize / 2;
+    float previewY = GetScreenHeight() / 4 + GetScreenHeight() * 0.18f; 
+
+    DrawTexture("map" + std::to_string(akttuelleslvl), previewX, previewY, previewSize, previewSize, WHITE);
+    
+    
+
     fensterschliesen();
     mependern();
 }
@@ -70,6 +79,6 @@ void MapLaden(int level, Map& map) {
     }
 
     PlayerPosition = PlayerSpawn;
-
+    EndereKistenPosition();
     LEtzteslvl = level;
 }
