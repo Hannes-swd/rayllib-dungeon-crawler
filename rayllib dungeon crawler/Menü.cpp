@@ -28,10 +28,11 @@ void ZeichneMenü() {
     mependern();
 }
 void mependern() {
+    
     if (IsKeyPressed(KEY_RIGHT) && akttuelleslvl <= levelanzahl) {
         akttuelleslvl++;
         menüGeendert = true;
-	}
+    }
     if (IsKeyPressed(KEY_LEFT) && akttuelleslvl > 1) {
         akttuelleslvl--;
         menüGeendert = true;
@@ -49,6 +50,12 @@ void fensterschliesen() {
 
 void MapLaden(int level, Map& map) {
     UnloadMap(map);
+    //zurücksetzen beim laden
+    GegnerAnzahl.clear();
+    MobSpawner.clear();
+    DropItems.clear();
+    Kistenanzahl.clear();
+    Kisten.clear();
 
     switch (level) {
     case 1:

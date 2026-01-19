@@ -66,6 +66,12 @@ int main(void)
 
         //aktualisiert wen aktuelle map nicht ist
         if (akttuelleslvl != LEtzteslvl) {
+            GegnerAnzahl.clear();
+            MobSpawner.clear();
+            DropItems.clear();
+            Kistenanzahl.clear();
+            Kisten.clear();
+
             MapLaden(akttuelleslvl, map);
         }
 
