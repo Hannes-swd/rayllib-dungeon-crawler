@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include <string>
 
 void ZeichneMenü() {
 	int windowWidth = GetScreenWidth();

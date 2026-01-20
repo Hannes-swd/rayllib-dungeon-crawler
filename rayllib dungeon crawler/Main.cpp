@@ -14,7 +14,7 @@
 #include "Tot.h"
 #include "Kiste.h"
 #include "Menü.h"
-
+#include "Tür.h"
 Map map;
 
 
@@ -154,6 +154,9 @@ int main(void)
 
         //kisten
         DrawKisten();
+
+		// tür öffnen
+        türÖfnen(map);
         //kiste sammeln
         SammleKisten();
 
