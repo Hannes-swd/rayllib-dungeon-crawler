@@ -63,8 +63,8 @@ int kistenanzahl = 0;
 
 
 int BerechneKistenAnzahl() {
-    if (Kistenanzahl.empty()) return 0;
-    return static_cast<int>(Kistenanzahl.size()) / 2;
+    if (Kisten.empty()) return 0;
+    return static_cast<int>(Kisten.size()) / 3;
 }
 
 void InitRandom() {
