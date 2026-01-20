@@ -71,4 +71,10 @@ void InitRandom() {
     std::srand(std::time(nullptr));
 }
 
+//Türen
+typedef struct Tür {
+    Vector2 Position;
+    bool offen = false;
+} Tür;
 
+std::vector<Tür> Türen;

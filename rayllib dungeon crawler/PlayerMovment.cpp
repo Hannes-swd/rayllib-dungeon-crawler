@@ -24,7 +24,7 @@ bool CanPlayerBeAt(Vector2 position) {
             }
 
             TileType tile = map.tiles[y * map.width + x];
-            if (tile == TILE_Wand) {
+            if (tile == TILE_Wand || tile == TILE_Tür) {
                 return false;
             }
         }

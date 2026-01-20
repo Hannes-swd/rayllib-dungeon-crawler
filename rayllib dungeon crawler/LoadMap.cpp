@@ -61,6 +61,10 @@ Map LoadMapFromImage(const char* filename) {
                 map.tiles[index] = TILE_Boden;
                 Kisten.push_back(Vector2{ (float)x, (float)y });
                 break;
+                // Tür
+            case 0x8f563b:
+                map.tiles[index] = TILE_Tür;
+                break;
             default:
                 map.tiles[index] = TILE_EMPTY;
                 break;

@@ -19,6 +19,9 @@ void DrawMap(const Map& map, int tileSize) {
             case TILE_Wand:
                 DrawTexture("Wand", x * tileSize, y * tileSize, tileSize, tileSize);
                 break;
+			case TILE_Tür:
+                DrawTexture("Tür", x * tileSize, y * tileSize, tileSize, tileSize);
+				break;
             case TILE_EMPTY: 
                 break;
             default:

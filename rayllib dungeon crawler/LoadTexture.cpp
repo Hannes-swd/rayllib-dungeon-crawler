@@ -23,6 +23,7 @@ void loadTextures() {
     textures["Energie_5"] = LoadTexture("resources/Energie_5.png");//energie mitte grau
     textures["Energie_6"] = LoadTexture("resources/Energie_6.png");//energie start grau
     textures["kiste"] = LoadTexture("resources/kiste.png");
+    textures["Tür"] = LoadTexture("resources/Tür.png");
     textures["energie_orb"] = LoadTexture("resources/energie_orb.png");
 
     //maps
