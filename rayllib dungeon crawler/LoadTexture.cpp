@@ -28,6 +28,7 @@ void loadTextures() {
     //maps
 	textures["map1"] = LoadTexture("resources/map1.png");
     textures["map2"] = LoadTexture("resources/map2.png");
+    textures["map3"] = LoadTexture("resources/map3.png");
 }
 
 void unloadTextures() {

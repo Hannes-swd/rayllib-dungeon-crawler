@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "globals.h"
-
+#include "raylib.h"
 // Menü offen
 bool MenüOffen = true;
 bool menüGeendert = false;
@@ -10,7 +10,7 @@ bool menüGeendert = false;
 //akttuelleslvl
 int akttuelleslvl = 1;
 int LEtzteslvl = 1;
-int levelanzahl = 1;
+int levelanzahl = 2;
 
 
 int TILE_SIZE = 32;
@@ -59,8 +59,16 @@ std::vector<DropItem> DropItems;
 //kisten
 std::vector<Vector2> Kisten;
 std::vector<Kiste> Kistenanzahl;
-int kistenanzahl = 2;
+int kistenanzahl = 0;
+
+
+int BerechneKistenAnzahl() {
+    if (Kistenanzahl.empty()) return 0;
+    return static_cast<int>(Kistenanzahl.size()) / 2;
+}
+
 void InitRandom() {
     std::srand(std::time(nullptr));
 }
+
 

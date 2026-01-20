@@ -11,6 +11,7 @@ void EndereKistenPosition() {
     Kistenanzahl.clear();
 
     if (Kisten.empty() || kistenanzahl <= 0) {
+        kistenanzahl = 0;
         return;
     }
 

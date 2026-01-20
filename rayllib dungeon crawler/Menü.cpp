@@ -73,6 +73,9 @@ void MapLaden(int level, Map& map) {
     case 2:
         map = LoadMapFromImage("resources/map2.png");
         break;
+    case 3:
+        map = LoadMapFromImage("resources/map3.png");
+        break;
     default:
         map = LoadMapFromImage("resources/map1.png");
         break;
@@ -80,5 +83,6 @@ void MapLaden(int level, Map& map) {
 
     PlayerPosition = PlayerSpawn;
     EndereKistenPosition();
+    kistenanzahl = BerechneKistenAnzahl();
     LEtzteslvl = level;
 }

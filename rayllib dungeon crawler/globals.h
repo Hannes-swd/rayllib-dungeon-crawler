@@ -48,4 +48,5 @@ extern int kistenanzahl;
 
 extern void EndereKistenPosition();
 extern void DrawKisten();
+int BerechneKistenAnzahl();
 
