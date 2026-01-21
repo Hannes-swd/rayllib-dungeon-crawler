@@ -72,9 +72,6 @@ void InitRandom() {
 }
 
 //Türen
-typedef struct Tür {
-    Vector2 Position;
-    bool offen = false;
-} Tür;
+
 
 std::vector<Tür> Türen;

@@ -31,6 +31,7 @@ void DrawUi() {
 	
 	DrawText(TextFormat("Spawner: %d", MobSpawner.size()), 10, 90, 50, RED);
 	DrawText(TextFormat("Gegner: %d", GegnerAnzahl.size()), 10, 130, 50, RED);
+	DrawText(TextFormat("Türen: %d", Türen.size()), 10, 170, 50, RED);
 	/*
 	DrawText(TextFormat("Leben: %d", SpielerLeben), 10, 50, 50, RED);
 	DrawText(TextFormat("Position: (%.2f, %.2f)", PlayerPosition.x, PlayerPosition.y), 10, 90, 20, RED);

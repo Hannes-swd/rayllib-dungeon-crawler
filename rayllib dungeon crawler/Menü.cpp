@@ -28,7 +28,7 @@ void ZeichneMenü() {
     
     float previewSize = GetScreenWidth() / 2.0f * 0.35f;
     float previewX = GetScreenWidth() / 2 - previewSize / 2;
-    float previewY = GetScreenHeight() / 4 + GetScreenHeight() * 0.18f; 
+    float previewY = windowWidth / 2 - windowWidth /4;
 
     DrawTexture("map" + std::to_string(akttuelleslvl), previewX, previewY, previewSize, previewSize, WHITE);
     
@@ -66,6 +66,7 @@ void MapLaden(int level, Map& map) {
     DropItems.clear();
     Kistenanzahl.clear();
     Kisten.clear();
+    Türen.clear();
 
     switch (level) {
     case 1:

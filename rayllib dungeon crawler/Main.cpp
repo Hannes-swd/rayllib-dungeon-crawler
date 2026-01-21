@@ -71,6 +71,7 @@ int main(void)
             DropItems.clear();
             Kistenanzahl.clear();
             Kisten.clear();
+            Türen.clear();
 
             MapLaden(akttuelleslvl, map);
         }

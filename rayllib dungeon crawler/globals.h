@@ -4,6 +4,7 @@
 #include "gegner.h"
 #include "Kiste.h"
 #include "drop.h"
+#include "Tür.h"
 
 
 //menü offen
@@ -50,5 +51,10 @@ extern void EndereKistenPosition();
 extern void DrawKisten();
 int BerechneKistenAnzahl();
 
-
+//tür
+typedef struct Tür {
+    Vector2 Position;
+    bool offen = false;
+} Tür;
+extern std::vector<Tür> Türen;
 
