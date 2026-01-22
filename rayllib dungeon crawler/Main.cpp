@@ -157,7 +157,8 @@ int main(void)
         DrawKisten();
 
 		// tür öffnen
-        türÖfnen(map);
+        türÖffnenUndSchließen(map, deltaTime);
+        ZeichneTüren();
         //kiste sammeln
         SammleKisten();
 

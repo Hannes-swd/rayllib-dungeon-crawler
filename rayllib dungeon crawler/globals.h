@@ -5,6 +5,7 @@
 #include "Kiste.h"
 #include "drop.h"
 #include "Tür.h"
+#include "Timer.h"
 
 
 //menü offen
@@ -55,6 +56,7 @@ int BerechneKistenAnzahl();
 typedef struct Tür {
     Vector2 Position;
     bool offen = false;
+	Timer schließTimer;
 } Tür;
 extern std::vector<Tür> Türen;
 

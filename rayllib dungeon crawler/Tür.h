@@ -1,4 +1,5 @@
 #pragma once
 #include "LoadMap.h"
 
-void türÖfnen(Map& map);
+void türÖffnenUndSchließen(Map& map, float deltaTime);
+void ZeichneTüren();
