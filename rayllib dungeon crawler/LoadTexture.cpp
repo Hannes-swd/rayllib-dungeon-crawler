@@ -26,6 +26,7 @@ void loadTextures() {
     textures["Tür"] = LoadTexture("resources/Tür.png");
     textures["energie_orb"] = LoadTexture("resources/energie_orb.png");
     textures["ETaste"] = LoadTexture("resources/ETaste.png");
+    textures["Geld"] = LoadTexture("resources/Geld.png");
     
 
     //maps

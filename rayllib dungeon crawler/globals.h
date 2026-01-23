@@ -7,6 +7,8 @@
 #include "Tür.h"
 #include "Timer.h"
 
+//geld
+extern int Geld;
 
 //menü offen
 extern bool MenüOffen;
