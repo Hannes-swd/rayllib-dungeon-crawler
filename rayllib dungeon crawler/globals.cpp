@@ -6,7 +6,7 @@
 
 //geld 
 
-int Geld = 999;
+int Geld = 0;
 
 
 // Menü offen

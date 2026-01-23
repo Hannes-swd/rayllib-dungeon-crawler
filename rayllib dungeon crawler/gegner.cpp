@@ -37,6 +37,9 @@ bool CanSeePlayer(const Vector2& gegnerPos, const Vector2& playerPos, const Map&
         if (tile == TILE_Wand) {
             return false;
         }
+        if (tile == TILE_Tür) {
+            return false;
+        }
     }
 
     return true;
@@ -56,7 +59,7 @@ bool IsValidPosition(const Vector2& pos, const Map& map) {
     }
 
     TileType tile = map.tiles[tileY * map.width + tileX];
-    return (tile != TILE_Wand);
+    return (tile != TILE_Wand) && (tile != TILE_Tür);
 }
 
 void Spawngegner() {
