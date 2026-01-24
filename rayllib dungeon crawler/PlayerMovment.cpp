@@ -39,10 +39,23 @@ void CheckMoovment() {
 
     Vector2 oldPosition = PlayerPosition;
 
-    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) newPosition.x += moveSpeed * GetFrameTime();
-    if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) newPosition.x -= moveSpeed * GetFrameTime();
-    if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) newPosition.y -= moveSpeed * GetFrameTime();
-    if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) newPosition.y += moveSpeed * GetFrameTime();
+    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D)) {
+        newPosition.x += moveSpeed * GetFrameTime();
+        gehrichtung = 2;
+    }
+    if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) { 
+        newPosition.x -= moveSpeed * GetFrameTime(); 
+        gehrichtung = 3;
+    }
+
+    if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) {
+        newPosition.y -= moveSpeed * GetFrameTime();
+        gehrichtung = 4;
+    }
+    if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) {
+        newPosition.y += moveSpeed * GetFrameTime();
+        gehrichtung = 1;
+    }
 
     if (CanPlayerBeAt(newPosition)) {
         PlayerPosition = newPosition;

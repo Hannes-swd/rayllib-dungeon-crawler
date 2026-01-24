@@ -8,6 +8,8 @@
 
 int Geld = 0;
 
+//moovment
+int gehrichtung = 1;
 
 // Menü offen
 bool MenüOffen = true;

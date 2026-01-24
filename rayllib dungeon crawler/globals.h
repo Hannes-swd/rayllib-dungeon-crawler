@@ -7,6 +7,9 @@
 #include "Tür.h"
 #include "Timer.h"
 
+//spieler
+
+extern int gehrichtung;
 //geld
 extern int Geld;
 
