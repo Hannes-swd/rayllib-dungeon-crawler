@@ -70,16 +70,16 @@ void MapLaden(int level, Map& map) {
 
     switch (level) {
     case 1:
-        map = LoadMapFromImage("resources/map1.png");
+        map = LoadMapFromImage("resources/Maps/map1.png");
         break;
     case 2:
-        map = LoadMapFromImage("resources/map2.png");
+        map = LoadMapFromImage("resources/Maps/map2.png");
         break;
     case 3:
-        map = LoadMapFromImage("resources/map3.png");
+        map = LoadMapFromImage("resources/Maps/map3.png");
         break;
     default:
-        map = LoadMapFromImage("resources/map1.png");
+        map = LoadMapFromImage("resources/Maps/map1.png");
         break;
     }
 
