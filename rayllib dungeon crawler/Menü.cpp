@@ -37,6 +37,7 @@ void ZeichneMenü() {
 
     
     if (std::find(FreigeschalteteMaps.begin(), FreigeschalteteMaps.end(), akttuelleslvl) == FreigeschalteteMaps.end()) {
+        //alles mit gesperten maüps
         DrawRectangle(previewX, previewY, previewSize, previewSize, Color{ 25, 25, 25, 255 });
         DrawRectangleLinesEx({ previewX, previewY, previewSize, previewSize }, 3, Color{ 60, 60, 60, 255 });
         DrawText(TextFormat("LEVEL %d", akttuelleslvl),
@@ -44,9 +45,20 @@ void ZeichneMenü() {
             previewY + previewSize / 2 - 30, 25, GRAY);
         DrawText("GESPERRT",
             previewX + previewSize / 2 - MeasureText("GESPERRT", 20) / 2,
-            previewY + previewSize / 2 + 10, 20, Color{ 200, 50, 50, 255 });
-
+            previewY + previewSize / 2 + 10, 20, RED);
         
+        DrawText("Kostet: 50",
+            previewX + previewSize / 2 - MeasureText("Kostet: 50", 20) / 2,
+            previewY + previewSize / 2 + 40, 20, RED);
+
+        if (IsKeyPressed(KEY_ENTER)) {
+            if (Geld >= 50) {
+                FreigeschalteteMaps.push_back(akttuelleslvl);
+                Geld -= 50;
+            }
+        }
+
+        //schaut ob es  wechseln kann
         if (kannMapWechseln)
             kannMapWechseln = false;
 	}
