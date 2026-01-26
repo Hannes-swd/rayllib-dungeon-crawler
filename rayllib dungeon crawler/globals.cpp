@@ -19,7 +19,7 @@ bool menüGeendert = false;
 int akttuelleslvl = 1;
 int LEtzteslvl = 1;
 int levelanzahl = 2;
-std::vector<int>FreigeschalteteMaps;
+std::vector<int>FreigeschalteteMaps = { 1 };
 
 
 int TILE_SIZE = 32;

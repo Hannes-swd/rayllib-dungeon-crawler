@@ -8,6 +8,8 @@
 #include <ctime>
 #include <algorithm>
 #include <string>
+#include <iostream>
+#include <unordered_set>
 
 void ZeichneMenü() {
 	int windowWidth = GetScreenWidth();
@@ -33,16 +35,17 @@ void ZeichneMenü() {
     DrawTexture("map" + std::to_string(akttuelleslvl), previewX, previewY, previewSize, previewSize, WHITE);
     
 
-    //map freigeschalten?
-    DrawRectangle(previewX, previewY, previewSize, previewSize, Color{ 25, 25, 25, 255 });
-    DrawRectangleLinesEx({ previewX, previewY, previewSize, previewSize }, 3, Color{ 60, 60, 60, 255 });
-    DrawText(TextFormat("LEVEL %d", akttuelleslvl),
-        previewX + previewSize / 2 - MeasureText(TextFormat("LEVEL %d", akttuelleslvl), 25) / 2,
-        previewY + previewSize / 2 - 30, 25, GRAY);
-    DrawText("GESPERRT",
-        previewX + previewSize / 2 - MeasureText("GESPERRT", 20) / 2,
-        previewY + previewSize / 2 + 10, 20, Color{ 200, 50, 50, 255 });
-
+    
+    if (std::find(FreigeschalteteMaps.begin(), FreigeschalteteMaps.end(), akttuelleslvl) == FreigeschalteteMaps.end()) {
+        DrawRectangle(previewX, previewY, previewSize, previewSize, Color{ 25, 25, 25, 255 });
+        DrawRectangleLinesEx({ previewX, previewY, previewSize, previewSize }, 3, Color{ 60, 60, 60, 255 });
+        DrawText(TextFormat("LEVEL %d", akttuelleslvl),
+            previewX + previewSize / 2 - MeasureText(TextFormat("LEVEL %d", akttuelleslvl), 25) / 2,
+            previewY + previewSize / 2 - 30, 25, GRAY);
+        DrawText("GESPERRT",
+            previewX + previewSize / 2 - MeasureText("GESPERRT", 20) / 2,
+            previewY + previewSize / 2 + 10, 20, Color{ 200, 50, 50, 255 });
+	}
 
     fensterschliesen();
     mependern();
