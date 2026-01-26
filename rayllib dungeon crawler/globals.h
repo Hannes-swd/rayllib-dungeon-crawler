@@ -24,6 +24,7 @@ extern int levelanzahl;
 extern int TILE_SIZE;
 extern Vector2 PlayerPosition;
 extern Camera2D Maincam;
+extern std::vector<int>FreigeschalteteMaps;
 
 void InitCamera();
 

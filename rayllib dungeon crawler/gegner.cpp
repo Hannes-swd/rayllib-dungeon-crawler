@@ -182,7 +182,7 @@ void spielerSchaden() {
         Rectangle enemyHitbox = { enemyScreenX, enemyScreenY, TILE_SIZE, TILE_SIZE };
         bool mouseInHitbox = CheckCollisionPointRec(mousePos, enemyHitbox);
 
-        //DrawRectangleLinesEx(enemyHitbox, 3.0f, RED); Hitbox
+        //DrawRectangleLinesEx(enemyHitbox, 3.0f, RED); //Hitbox
         
         if (distance < 20.0f && mouseInHitbox) {
             

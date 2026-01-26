@@ -20,8 +20,8 @@ void ZeichneMenü() {
 	DrawText("Test Menü", windowWidth / 2 - MeasureText("Test Menü", 20) / 2, windowHeight / 4 + 20, 20, WHITE);
 	// map zeigen
 
-    DrawText(TextFormat("akttuelleslvl %d", akttuelleslvl),
-        windowWidth / 2 - MeasureText("akttuelleslvl s", 20) / 2,
+    DrawText(TextFormat("aktuelles Level: %d", akttuelleslvl),
+        windowWidth / 2 - MeasureText(TextFormat("aktuelles Level: %d", akttuelleslvl), 20) / 2,
         windowHeight / 4 + 60, 20, WHITE);
     
 
@@ -32,7 +32,17 @@ void ZeichneMenü() {
 
     DrawTexture("map" + std::to_string(akttuelleslvl), previewX, previewY, previewSize, previewSize, WHITE);
     
-    
+
+    //map freigeschalten?
+    DrawRectangle(previewX, previewY, previewSize, previewSize, Color{ 25, 25, 25, 255 });
+    DrawRectangleLinesEx({ previewX, previewY, previewSize, previewSize }, 3, Color{ 60, 60, 60, 255 });
+    DrawText(TextFormat("LEVEL %d", akttuelleslvl),
+        previewX + previewSize / 2 - MeasureText(TextFormat("LEVEL %d", akttuelleslvl), 25) / 2,
+        previewY + previewSize / 2 - 30, 25, GRAY);
+    DrawText("GESPERRT",
+        previewX + previewSize / 2 - MeasureText("GESPERRT", 20) / 2,
+        previewY + previewSize / 2 + 10, 20, Color{ 200, 50, 50, 255 });
+
 
     fensterschliesen();
     mependern();
