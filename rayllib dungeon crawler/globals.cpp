@@ -20,6 +20,7 @@ int akttuelleslvl = 1;
 int LEtzteslvl = 1;
 int levelanzahl = 2;
 std::vector<int>FreigeschalteteMaps = { 1 };
+bool kannMapWechseln = true;
 
 
 int TILE_SIZE = 32;

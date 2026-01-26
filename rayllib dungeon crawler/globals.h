@@ -25,6 +25,7 @@ extern int TILE_SIZE;
 extern Vector2 PlayerPosition;
 extern Camera2D Maincam;
 extern std::vector<int>FreigeschalteteMaps;
+extern bool kannMapWechseln;
 
 void InitCamera();
 

@@ -45,33 +45,45 @@ void ZeichneMenü() {
         DrawText("GESPERRT",
             previewX + previewSize / 2 - MeasureText("GESPERRT", 20) / 2,
             previewY + previewSize / 2 + 10, 20, Color{ 200, 50, 50, 255 });
+
+        
+        if (kannMapWechseln)
+            kannMapWechseln = false;
 	}
+    else {
+        kannMapWechseln = true;
+    }
 
     fensterschliesen();
     mependern();
 }
 void mependern() {
     
-    if (IsKeyPressed(KEY_RIGHT) && akttuelleslvl <= levelanzahl) {
-        akttuelleslvl++;
-        menüGeendert = true;
-    }
-    if (IsKeyPressed(KEY_LEFT) && akttuelleslvl > 1) {
-        akttuelleslvl--;
-        menüGeendert = true;
-    }
+        if (IsKeyPressed(KEY_RIGHT) && akttuelleslvl <= levelanzahl) {
+            akttuelleslvl++;
+            menüGeendert = true;
+        }
+        if (IsKeyPressed(KEY_LEFT) && akttuelleslvl > 1) {
+            akttuelleslvl--;
+            menüGeendert = true;
+        }
+    
 }
 void fensterschliesen() {
-    if (IsKeyPressed(KEY_ESCAPE) && !menüGeendert) {
-
-        MenüOffen = false;
+    if (IsKeyPressed(KEY_ENTER) && !menüGeendert) {
+        if (kannMapWechseln) {
+            MenüOffen = false;
+        }
     }
-    if (menüGeendert == true && IsKeyUp(KEY_ESCAPE)) {
-        menüGeendert = false;
+    if (menüGeendert == true && IsKeyUp(KEY_ENTER)) {
+        if (kannMapWechseln) {
+            menüGeendert = false;
+        }
     }
 }
 
 void MapLaden(int level, Map& map) {
+    
     UnloadMap(map);
     //zurücksetzen beim laden
     GegnerAnzahl.clear();
