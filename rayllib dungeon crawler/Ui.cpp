@@ -33,6 +33,7 @@ void DrawUi() {
 	DrawTexture("Geld", 10, 90, 32, 32);
 	DrawText(TextFormat("%d", Geld), 50, 93, 30, YELLOW);
 	
+	
 	/*
 	DrawText(TextFormat("Gegner: %d", GegnerAnzahl.size()), 10, 130, 50, RED);
 	DrawText(TextFormat("Tueren: %d", Türen.size()), 10, 170, 50, RED);

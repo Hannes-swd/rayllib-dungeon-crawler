@@ -50,14 +50,16 @@ void ZeichneMenü() {
         DrawText("Kostet: 50",
             previewX + previewSize / 2 - MeasureText("Kostet: 50", 20) / 2,
             previewY + previewSize / 2 + 40, 20, RED);
-
+        //map kaufen
         if (IsKeyPressed(KEY_ENTER)) {
             if (Geld >= 50) {
                 FreigeschalteteMaps.push_back(akttuelleslvl);
                 Geld -= 50;
             }
         }
-
+        
+            
+        
         //schaut ob es  wechseln kann
         if (kannMapWechseln)
             kannMapWechseln = false;
@@ -65,6 +67,17 @@ void ZeichneMenü() {
     else {
         kannMapWechseln = true;
     }
+
+    //zeigt geld
+
+    int kastenRechts = windowWidth / 4 * 3;
+    int textBreite = MeasureText(TextFormat("%d", Geld), 40);
+    int gesamtBreite = 64 + 10 + textBreite;
+    int startX = kastenRechts - gesamtBreite - 20;
+
+    DrawTexture("Geld", startX, windowHeight / 5 + 30, 64, 64);
+    DrawText(TextFormat("%d", Geld), startX + 64 + 10, windowHeight / 5 + 40, 40, YELLOW);
+
 
     fensterschliesen();
     mependern();
