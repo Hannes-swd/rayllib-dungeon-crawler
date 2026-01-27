@@ -21,11 +21,15 @@ Map map;
 
 int main(void)
 {
+    Image icon = LoadImage("resources/Logo/Logo.png");
     //programm infos
     const int screenWidth = 800;
     const int screenHeight = 450;
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    InitWindow(screenWidth, screenHeight, "Dungeon crawler");
+    InitWindow(screenWidth, screenHeight, "Room runner");
+    SetWindowIcon(icon);
+    UnloadImage(icon);
+
     InitCamera();
     SetTargetFPS(60);
 

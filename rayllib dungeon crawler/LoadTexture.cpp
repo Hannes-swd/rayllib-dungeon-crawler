@@ -46,7 +46,7 @@ void loadTextures() {
     textures["map2"] = LoadTexture("resources/Maps/map2.png");
     textures["map3"] = LoadTexture("resources/Maps/map3.png");
 
-    //textures["Zaber"] = LoadTexture("resources/zaber.png");
+
 }
 
 void unloadTextures() {
