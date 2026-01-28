@@ -95,7 +95,7 @@ void mependern() {
     
 }
 void fensterschliesen() {
-    if (IsKeyPressed(KEY_ENTER) && !menüGeendert) {
+    if (IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_ESCAPE) && !menüGeendert) {
         if (kannMapWechseln) {
             MenüOffen = false;
         }
