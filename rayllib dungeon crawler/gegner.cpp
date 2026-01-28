@@ -226,19 +226,30 @@ void spielerSchaden() {
                     if (GegnerAnzahl[i].health <= 0) {
                         GegnerAnzahl[i].alive = false;
                         energie--;
-                        bool BekommtHerz = rand() % 100 < 30;
-                        bool BekommtGeld = rand() % 100 < 100;
-                        if (BekommtHerz)
-                            Drop("herz", 1, mousePos.x, mousePos.y);
+                        if (GegnerAnzahl[i].Typ == 1) {
+                            bool BekommtHerz = rand() % 100 < 30;
+                            bool BekommtGeld = rand() % 100 < 100;
+                            if (BekommtHerz)
+                                Drop("herz", 1, mousePos.x, mousePos.y);
 
-                        if (BekommtGeld)
-                            Drop("Geld", 1, mousePos.x, mousePos.y);
+                            if (BekommtGeld)
+                                Drop("Geld", 1, mousePos.x, mousePos.y);
+                        }
+
+                        if (GegnerAnzahl[i].Typ == 2) {
+                            bool BekommtHerz = rand() % 100 < 30;
+                            if (BekommtHerz)
+                                Drop("herz", 1, mousePos.x, mousePos.y);
+
+                            Drop("Geld", 2, mousePos.x, mousePos.y);
+                        }
+                        
 
 
                         break;
                     }
                     else {
-                        GegnerAnzahl[i].health -= 10;
+                        GegnerAnzahl[i].health -= 15;
                         energie--;
                         break;
                     }
