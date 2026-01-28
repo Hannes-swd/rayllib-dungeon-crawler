@@ -11,6 +11,7 @@ typedef struct Gegner {
     float sightRange = 5.0f;
     float wanderTimer = 0.0f;
     Vector2 wanderDirection = { 0, 0 };
+    int Typ;
 } Gegner;
 
 void Spawngegner();

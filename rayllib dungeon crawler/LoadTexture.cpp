@@ -36,7 +36,8 @@ void loadTextures() {
     textures["energie_orb"] = LoadTexture("resources/Ui/energie_orb.png");
 
     //gegner
-    textures["Gegner"] = LoadTexture("resources/Gegner/Gegner.png");
+    textures["Gegner1"] = LoadTexture("resources/Gegner/Gegner1.png");
+    textures["Gegner2"] = LoadTexture("resources/Gegner/Gegner2.png");
     
     //andere
     textures["ETaste"] = LoadTexture("resources/Andere/ETaste.png");

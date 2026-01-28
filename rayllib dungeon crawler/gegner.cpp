@@ -65,24 +65,51 @@ bool IsValidPosition(const Vector2& pos, const Map& map) {
 void Spawngegner() {
     if (MobSpawner.empty()) return;
 
+	int gegnertyp = rand() % 2 + 1;
     Vector2 spawnPoint = MobSpawner[std::rand() % MobSpawner.size()];
     Gegner newGegner;
     newGegner.position = spawnPoint;
     newGegner.sightRange = 5.0f;
     newGegner.wanderTimer = (std::rand() % 100) * 0.01f;
     newGegner.wanderDirection = GetRandomDirection();
+    newGegner.Typ = gegnertyp;
+    //personelle
+    if (newGegner.Typ == 1) {
+        newGegner.maxHealth = 10;
+        newGegner.health = 10;
+    }
+    if (newGegner.Typ == 2) {
+        newGegner.maxHealth = 20;
+        newGegner.health = 20;
+    }
+        
+    
+
+
     GegnerAnzahl.push_back(newGegner);
 }
 
 void ZeichneGegner() {
     for (size_t i = 0; i < GegnerAnzahl.size(); i++) {
         if (GegnerAnzahl[i].alive) {
-            DrawTexture("Gegner",
-                GegnerAnzahl[i].position.x * TILE_SIZE,
-                GegnerAnzahl[i].position.y * TILE_SIZE,
-                32.0f,
-                32.0f,
-                WHITE);
+            //wen gegnertyp 1 ist
+            if (GegnerAnzahl[i].Typ == 1) {
+                DrawTexture("Gegner1",
+                    GegnerAnzahl[i].position.x * TILE_SIZE,
+                    GegnerAnzahl[i].position.y * TILE_SIZE,
+                    32.0f,
+                    32.0f,
+                    WHITE);
+			}
+            if (GegnerAnzahl[i].Typ == 2) {
+                DrawTexture("Gegner2",
+                    GegnerAnzahl[i].position.x * TILE_SIZE,
+                    GegnerAnzahl[i].position.y * TILE_SIZE,
+                    32.0f,
+                    32.0f,
+                    WHITE);
+            }
+            
         }
     }
 }
@@ -195,18 +222,26 @@ void spielerSchaden() {
                     WHITE);
 
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                    GegnerAnzahl[i].alive = false;
-                    energie--;
-                    bool BekommtHerz = rand() % 100 < 30;
-                    bool BekommtGeld = rand() % 100 < 100;
-                    if (BekommtHerz)
-                        Drop("herz", 1, mousePos.x, mousePos.y);
 
-                    if (BekommtGeld)
-                        Drop("Geld", 1, mousePos.x, mousePos.y);
-                    
+                    if (GegnerAnzahl[i].health <= 0) {
+                        GegnerAnzahl[i].alive = false;
+                        energie--;
+                        bool BekommtHerz = rand() % 100 < 30;
+                        bool BekommtGeld = rand() % 100 < 100;
+                        if (BekommtHerz)
+                            Drop("herz", 1, mousePos.x, mousePos.y);
 
-                    break;
+                        if (BekommtGeld)
+                            Drop("Geld", 1, mousePos.x, mousePos.y);
+
+
+                        break;
+                    }
+                    else {
+                        GegnerAnzahl[i].health -= 10;
+                        energie--;
+                        break;
+                    }
                 }
             }
             

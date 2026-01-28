@@ -6,7 +6,7 @@
 
 //geld 
 
-int Geld = 0;
+int Geld = 1000;
 
 //moovment
 int gehrichtung = 1;
