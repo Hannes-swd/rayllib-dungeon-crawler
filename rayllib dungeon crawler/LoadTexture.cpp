@@ -33,7 +33,8 @@ void loadTextures() {
     textures["Energie_5"] = LoadTexture("resources/Ui/Energie_5.png");//energie mitte grau
     textures["Energie_6"] = LoadTexture("resources/Ui/Energie_6.png");//energie start grau
     textures["Geld"] = LoadTexture("resources/Ui/Geld.png");
-    textures["energie_orb"] = LoadTexture("resources/Ui/energie_orb.png");
+    textures["energie_orb"] = LoadTexture("resources/Ui/energie_orb.png"); 
+    textures["Sprinten"] = LoadTexture("resources/Ui/Sprinten.png");
 
     //gegner
     textures["Gegner1"] = LoadTexture("resources/Gegner/Gegner1.png");

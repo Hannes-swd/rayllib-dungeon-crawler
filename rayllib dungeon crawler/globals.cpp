@@ -1,6 +1,8 @@
 // globals.cpp
 #include <cstdlib>
+#include <iostream>
 #include <ctime>
+#include <filesystem>
 #include "globals.h"
 #include "raylib.h"
 
@@ -18,7 +20,7 @@ bool menüGeendert = false;
 //akttuelleslvl
 int akttuelleslvl = 1;
 int LEtzteslvl = 1;
-int levelanzahl = 2;
+int levelanzahl = 2;//anzahl an maps -1
 std::vector<int>FreigeschalteteMaps = { 1 };
 bool kannMapWechseln = true;
 
