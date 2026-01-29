@@ -142,6 +142,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menü.cpp" />
     <ClCompile Include="PlayerMovment.cpp" />
+    <ClCompile Include="Speed.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Tot.cpp" />
     <ClCompile Include="Tür.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="LoadTexture.h" />
     <ClInclude Include="Menü.h" />
     <ClInclude Include="PlayerMovment.h" />
+    <ClInclude Include="Speed.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Tot.h" />
     <ClInclude Include="Tür.h" />

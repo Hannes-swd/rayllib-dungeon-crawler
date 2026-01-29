@@ -134,6 +134,7 @@ void CollectDropItems() {
                 itemCollected = true;
             }
             else if (DropItems[i].itemName == "Sprinten") {
+                Speed.start(5.0f);
                 itemCollected = true;
             }
             if (itemCollected) {

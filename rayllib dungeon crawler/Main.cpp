@@ -15,10 +15,16 @@
 #include "Kiste.h"
 #include "Menü.h"
 #include "Tür.h"
+#include "Speed.h"
 Map map;
 
 
+/*
 
+if (Speed.finished())
+    DrawText("Sprint aktiv!", 10, 10, 100, GREEN);
+            
+*/
 int main(void)
 {
     Image icon = LoadImage("resources/Logo/Logo.png");
@@ -53,6 +59,7 @@ int main(void)
     //timer 
     Timer DamageTimer;
     DamageTimer.start(1.0f);
+    Speed.start(0.0f);
 
     //mobspawn
     int mobspawncowntdown = 100;
@@ -83,6 +90,7 @@ int main(void)
         //timer - Hier deltaTime mit GetFrameTime() definieren
         float deltaTime = GetFrameTime();
         DamageTimer.update(deltaTime);
+        Speed.update(deltaTime);
 
         // Spielerbewegung zuerst
         if (!Tot && !MenüOffen) {
@@ -106,6 +114,7 @@ int main(void)
             if (map.tiles[playerTileY * map.width + playerTileX] == TILE_LAVA) {
                 if (DamageTimer.finished()) {
                     DealPlayerDamage(1);
+
                     DamageTimer.start(0.5f);
                 }
             }
@@ -154,6 +163,8 @@ int main(void)
         // Map zeichnen
         DrawMap(map, TILE_SIZE);
 
+        
+
         // Spieler zeichnen
         DrawPlayer();
 
@@ -177,6 +188,7 @@ int main(void)
         // drops anzeigen
         DrawDropItems();
         CollectDropItems();
+        SpeedEffect();
 
         EndMode2D();
 

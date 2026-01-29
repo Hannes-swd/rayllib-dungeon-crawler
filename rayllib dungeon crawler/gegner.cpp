@@ -237,11 +237,14 @@ void spielerSchaden() {
 
                         if (GegnerAnzahl[i].Typ == 2) {
                             bool BekommtHerz = rand() % 100 < 30;
+                            bool BekommtSprinten = rand() % 100 < 30;
                             if (BekommtHerz)
                                 Drop("herz", 1, mousePos.x, mousePos.y);
+                            if (BekommtSprinten)
+                                Drop("Sprinten", 1, mousePos.x, mousePos.y);
 
                             Drop("Geld", 2, mousePos.x, mousePos.y);
-                            Drop("Sprinten", 1, mousePos.x, mousePos.y);
+                            
                         }
                         break;
                     }

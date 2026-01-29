@@ -67,3 +67,6 @@ typedef struct Tür {
 } Tür;
 extern std::vector<Tür> Türen;
 
+
+//speed
+extern Timer Speed;

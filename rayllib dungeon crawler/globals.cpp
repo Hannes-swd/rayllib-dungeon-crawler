@@ -87,3 +87,6 @@ void InitRandom() {
 
 
 std::vector<Tür> Türen;
+
+//speed
+Timer Speed;
