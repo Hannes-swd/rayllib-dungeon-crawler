@@ -222,7 +222,6 @@ void spielerSchaden() {
                     WHITE);
 
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-
                     if (GegnerAnzahl[i].health <= 0) {
                         GegnerAnzahl[i].alive = false;
                         energie--;
@@ -242,10 +241,8 @@ void spielerSchaden() {
                                 Drop("herz", 1, mousePos.x, mousePos.y);
 
                             Drop("Geld", 2, mousePos.x, mousePos.y);
+                            Drop("Sprinten", 1, mousePos.x, mousePos.y);
                         }
-                        
-
-
                         break;
                     }
                     else {
