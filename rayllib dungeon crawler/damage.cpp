@@ -5,7 +5,7 @@
 
 void DealPlayerDamage(int damage) {
 	SpielerLeben -= damage;
-	if (SpielerLeben < 0) {
+	if (SpielerLeben <= 0) {
 		Tot = true;
 	}
 }

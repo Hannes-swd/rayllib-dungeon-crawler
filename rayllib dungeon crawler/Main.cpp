@@ -188,6 +188,7 @@ int main(void)
         // drops anzeigen
         DrawDropItems();
         CollectDropItems();
+        
         SpeedEffect();
 
         EndMode2D();
@@ -200,7 +201,7 @@ int main(void)
             DrawUi();
         }
 
-        if (MenüOffen) {
+        if (MenüOffen && !Tot) {
             ZeichneMenü();
         }
 
