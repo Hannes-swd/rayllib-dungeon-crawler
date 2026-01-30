@@ -8,7 +8,7 @@
 
 //geld 
 
-int Geld = 1000;
+int Geld = 0;
 
 //moovment
 int gehrichtung = 1;

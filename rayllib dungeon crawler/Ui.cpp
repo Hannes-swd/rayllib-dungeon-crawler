@@ -33,6 +33,10 @@ void DrawUi() {
 	DrawTexture("Geld", 10, 90, 32, 32);
 	DrawText(TextFormat("%d", Geld), 50, 93, 30, YELLOW);
 	
+	//speed effect anzeigen
+	if (!Speed.finished())
+		DrawTexture("Sprinten", 10, 140, 55, 50);
+
 	
 	/*
 	DrawText(TextFormat("Gegner: %d", GegnerAnzahl.size()), 10, 130, 50, RED);
