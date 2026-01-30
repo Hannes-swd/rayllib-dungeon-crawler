@@ -125,6 +125,7 @@ int main(void)
             }
             else {
                 PlayerSpeed = 3.0f;
+                SpeedEffect();
             }
         }
 
@@ -189,7 +190,7 @@ int main(void)
         DrawDropItems();
         CollectDropItems();
         
-        SpeedEffect();
+        
 
         EndMode2D();
 
